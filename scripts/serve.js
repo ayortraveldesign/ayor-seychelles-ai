@@ -4,7 +4,9 @@ const path = require("node:path");
 
 const root = path.resolve(__dirname, "..");
 const port = Number(process.env.PORT || 4173);
-const defaultHtml = "index.html";
+const defaultHtml = fs.existsSync(path.join(root, "ayor-seychelles-landing-refined.html"))
+  ? "ayor-seychelles-landing-refined.html"
+  : "ayor-seychelles-ai-planner.html";
 const types = {
   ".css": "text/css; charset=utf-8",
   ".html": "text/html; charset=utf-8",
