@@ -1134,7 +1134,7 @@
       if (!recommended.length || !ayorMap) return;
       const bounds = L.latLngBounds(recommended.map(location => [location.lat, location.lng]));
       ayorMap.fitBounds(bounds, { padding: [55, 55], maxZoom: 13 });
-      setVisualView("map");
+      setVisualView("video");
     }
 
     function focusLocation(id) {
