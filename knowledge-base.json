@@ -1,0 +1,1765 @@
+{
+  "meta": {
+    "title": "AYOR Seychelles Travel Knowledge Base",
+    "version": "2026-06-05",
+    "source": "Seychelles Travel Knowledge Base (1).pdf",
+    "scope": "Mahé-focused practical travel planning",
+    "retrievalPolicy": {
+      "primarySource": "knowledge-base",
+      "retrieveOnlyRelevantTopics": true,
+      "combineUnrelatedTopics": false,
+      "futureWebSearch": "Use only when the knowledge base lacks the answer or the request requires current schedules, prices, weather, tides, entry rules, or availability."
+    },
+    "answerArchitecture": {
+      "generalSource": "Current structured public facts; replaceable by GPT or verified public sources.",
+      "currentSource": "Future official web search for schedules, advisories, weather, tides, prices, and entry rules.",
+      "localSource": "AYOR Notes only: personal experience, local observations, decision logic, practical tips, and mistakes to avoid."
+    }
+  },
+  "topics": [
+    {
+      "id": "route-security-concern",
+      "label": "Route and security concern",
+      "category": "flights",
+      "keywords": [
+        "iran",
+        "dubai",
+        "war",
+        "conflict",
+        "worried",
+        "anxious",
+        "security concern",
+        "avoid dubai",
+        "safe route",
+        "calmer route"
+      ],
+      "answer": "If routing through Dubai already makes you anxious, I would not build the trip around that connection. Even when flights are operating, peace of mind is part of a good itinerary. Better alternatives include Turkish Airlines via Istanbul, Ethiopian Airlines via Addis Ababa, Kenya Airways via Nairobi, or direct and seasonal Frankfurt services when the dates match. Compare the calmer options by total travel time, connection quality, and price difference. If a route costs moderately more but removes a concern that would follow you from booking until departure, the extra cost may be worthwhile. A comfortable decision should still feel sensible when you review it a few days later. Security conditions and airline operations can change quickly, so verify current official travel advisories and airline updates before booking.",
+      "facts": [
+        "Alternative connections include Istanbul, Addis Ababa, and Nairobi.",
+        "Direct or seasonal Frankfurt services may be available when dates match.",
+        "Security conditions and airline operations require current verification."
+      ],
+      "general_facts": [
+        "Alternative connections include Istanbul, Addis Ababa, and Nairobi.",
+        "Direct or seasonal Frankfurt services may be available when dates match.",
+        "Security conditions and airline operations require current verification."
+      ],
+      "ayor_notes": [
+        "Travel planning is not only about price and duration. If a route feels stressful before booking, that is already a valid reason to choose another connection."
+      ],
+      "links": [
+        {
+          "label": "Condor",
+          "url": "https://www.condor.com/"
+        },
+        {
+          "label": "Discover Airlines",
+          "url": "https://www.discover-airlines.com/"
+        },
+        {
+          "label": "Turkish Airlines",
+          "url": "https://www.turkishairlines.com/en-int/flights/"
+        },
+        {
+          "label": "Ethiopian Airlines",
+          "url": "https://www.ethiopianairlines.com/"
+        },
+        {
+          "label": "Kenya Airways",
+          "url": "https://www.kenya-airways.com/"
+        }
+      ],
+      "sourcePages": [
+        1
+      ],
+      "currentDataRecommended": true,
+      "format": {
+        "intro": "If routing through Dubai already makes you anxious, I would not build the trip around that connection. Even when flights are operating, peace of mind is part of a good itinerary. Better alternatives include Turkish Airlines via Istanbul, Ethiopian Airlines via Addis Ababa, Kenya Airways via Nairobi, or direct and seasonal Frankfurt services when the dates match. Compare the calmer options by total travel time, connection quality, and price difference. If a route costs moderately more but removes a concern that would follow you from booking until departure, the extra cost may be worthwhile. A comfortable decision should still feel sensible when you review it a few days later. Security conditions and airline operations can change quickly, so verify current official travel advisories and airline updates before booking.",
+        "context": "",
+        "sections": [
+          {
+            "heading": "Key details",
+            "items": [
+              "Alternative connections include Istanbul, Addis Ababa, and Nairobi.",
+              "Direct or seasonal Frankfurt services may be available when dates match.",
+              "Security conditions and airline operations require current verification."
+            ]
+          }
+        ],
+        "important": "Use these details as a planning guide and verify time-sensitive information before booking."
+      },
+      "designer_response": {
+        "recommendation": "If routing through Dubai already makes you anxious, I would choose another connection.",
+        "reasoning": "Even if flights are operating normally, peace of mind matters. A holiday starts when you book the ticket, not only when you arrive. The cheapest itinerary is not automatically the best one when it creates weeks of avoidable stress.",
+        "practical_options": [
+          {
+            "heading": "Better alternatives to consider",
+            "items": [
+              {
+                "text": "Turkish Airlines via Istanbul.",
+                "linkId": "turkish"
+              },
+              {
+                "text": "Ethiopian Airlines via Addis Ababa.",
+                "linkId": "ethiopian"
+              },
+              {
+                "text": "Kenya Airways via Nairobi.",
+                "linkId": "kenya"
+              },
+              {
+                "text": "Direct or seasonal Frankfurt services if the dates match.",
+                "linkId": "condor"
+              }
+            ]
+          },
+          {
+            "heading": "How I would decide",
+            "items": [
+              "Compare the calmer routes by total journey time, connection quality, and price difference.",
+              "If the alternative costs moderately more but feels much calmer, choose the calmer route."
+            ]
+          }
+        ],
+        "relevant_facts": [
+          "Istanbul, Addis Ababa, and Nairobi are practical alternatives to a Dubai connection.",
+          "Frankfurt may offer direct or seasonal services when the dates match."
+        ],
+        "important": "For any security-related concern, check current official travel advisories and airline updates before booking."
+      }
+    },
+    {
+      "id": "flights-germany",
+      "label": "Flights from Germany",
+      "category": "flights",
+      "keywords": [
+        "germany",
+        "german",
+        "frankfurt",
+        "munich",
+        "berlin",
+        "direct flight",
+        "condor",
+        "discover airlines"
+      ],
+      "answer": "From Germany, AYOR identifies Frankfurt as the direct-flight departure point. Condor is listed with a Friday outbound and Saturday inbound service, resuming on October 9, 2026. Discover Airlines is listed with outbound flights on Mondays and Wednesdays and inbound flights on Tuesdays and Sundays, resuming on June 26, 2026.\n\nIf those dates or departure days do not fit, the relevant one-stop options are Turkish Airlines via Istanbul, Ethiopian Airlines via Addis Ababa, and Kenya Airways via Nairobi. All international services arrive at Seychelles International Airport, SEZ, on Mahé.\n\nDecision: compare the Frankfurt direct options first for your exact dates, then compare one-stop routes by total journey time and connection quality. Because flight schedules are time-sensitive, verify the operating dates with the airline before booking. If you plan to continue to Praslin after arrival, leave enough time for immigration, baggage collection, and the onward connection.",
+      "facts": [
+        "Condor: direct from Frankfurt; outbound Friday; inbound Saturday; resumes October 9, 2026.",
+        "Discover Airlines: direct from Frankfurt; outbound Monday and Wednesday; inbound Tuesday and Sunday; resumes June 26, 2026.",
+        "One-stop alternatives: Turkish Airlines via Istanbul, Ethiopian Airlines via Addis Ababa, Kenya Airways via Nairobi.",
+        "International arrival airport: SEZ on Mahé."
+      ],
+      "sourcePages": [
+        1
+      ],
+      "currentDataRecommended": true,
+      "links": [
+        {
+          "label": "Condor",
+          "url": "https://www.condor.com/"
+        },
+        {
+          "label": "Discover Airlines",
+          "url": "https://www.discover-airlines.com/"
+        },
+        {
+          "label": "Turkish Airlines",
+          "url": "https://www.turkishairlines.com/en-int/flights/"
+        },
+        {
+          "label": "Ethiopian Airlines",
+          "url": "https://www.ethiopianairlines.com/"
+        },
+        {
+          "label": "Kenya Airways",
+          "url": "https://www.kenya-airways.com/"
+        }
+      ],
+      "format": {
+        "intro": "From Germany, start with the direct Frankfurt services, then compare the relevant one-stop routes if the dates do not fit.",
+        "context": "Frankfurt is the only German direct departure point identified in AYOR. All international routes arrive at Seychelles International Airport, SEZ, on Mahé. If your final destination is Praslin or La Digue, treat the onward island movement as a separate connection rather than part of the international arrival.",
+        "sections": [
+          {
+            "heading": "Direct flights",
+            "items": [
+              {
+                "text": "Condor — Frankfurt to Mahé. Outbound Friday; inbound Saturday. AYOR lists service resuming October 9, 2026.",
+                "linkId": "condor"
+              },
+              {
+                "text": "Discover Airlines — Frankfurt to Mahé. Outbound Monday and Wednesday; inbound Tuesday and Sunday. AYOR lists service resuming June 26, 2026.",
+                "linkId": "discover"
+              }
+            ]
+          },
+          {
+            "heading": "One-stop alternatives",
+            "items": [
+              {
+                "text": "Turkish Airlines via Istanbul.",
+                "linkId": "turkish"
+              },
+              {
+                "text": "Ethiopian Airlines via Addis Ababa.",
+                "linkId": "ethiopian"
+              },
+              {
+                "text": "Kenya Airways via Nairobi.",
+                "linkId": "kenya"
+              }
+            ]
+          },
+          {
+            "heading": "Arrival airport",
+            "items": [
+              "All international services arrive at SEZ International Airport on Mahé."
+            ]
+          }
+        ],
+        "important": "Compare the Frankfurt direct options first, then choose by total journey time and connection quality. Verify schedules before booking and leave a generous buffer for any onward Praslin connection."
+      },
+      "general_facts": [
+        "Condor: direct from Frankfurt; outbound Friday; inbound Saturday; resumes October 9, 2026.",
+        "Discover Airlines: direct from Frankfurt; outbound Monday and Wednesday; inbound Tuesday and Sunday; resumes June 26, 2026.",
+        "One-stop alternatives: Turkish Airlines via Istanbul, Ethiopian Airlines via Addis Ababa, Kenya Airways via Nairobi.",
+        "International arrival airport: SEZ on Mahé."
+      ],
+      "ayor_notes": [],
+      "designer_response": {
+        "recommendation": "I would check the direct Frankfurt options first, then compare the relevant one-stop routes only if the dates or price do not work.",
+        "reasoning": "Frankfurt is the only German direct departure point identified in AYOR. All international routes arrive at Seychelles International Airport, SEZ, on Mahé. If your final destination is Praslin or La Digue, treat the onward island movement as a separate connection rather than part of the international arrival.",
+        "practical_options": [
+          {
+            "heading": "Direct flights",
+            "items": [
+              {
+                "text": "Condor — Frankfurt to Mahé. Outbound Friday; inbound Saturday. AYOR lists service resuming October 9, 2026.",
+                "linkId": "condor"
+              },
+              {
+                "text": "Discover Airlines — Frankfurt to Mahé. Outbound Monday and Wednesday; inbound Tuesday and Sunday. AYOR lists service resuming June 26, 2026.",
+                "linkId": "discover"
+              }
+            ]
+          },
+          {
+            "heading": "One-stop alternatives",
+            "items": [
+              {
+                "text": "Turkish Airlines via Istanbul.",
+                "linkId": "turkish"
+              },
+              {
+                "text": "Ethiopian Airlines via Addis Ababa.",
+                "linkId": "ethiopian"
+              },
+              {
+                "text": "Kenya Airways via Nairobi.",
+                "linkId": "kenya"
+              }
+            ]
+          },
+          {
+            "heading": "Arrival airport",
+            "items": [
+              "All international services arrive at SEZ International Airport on Mahé."
+            ]
+          }
+        ],
+        "relevant_facts": [
+          "Condor: direct from Frankfurt; outbound Friday; inbound Saturday; resumes October 9, 2026.",
+          "Discover Airlines: direct from Frankfurt; outbound Monday and Wednesday; inbound Tuesday and Sunday; resumes June 26, 2026.",
+          "One-stop alternatives: Turkish Airlines via Istanbul, Ethiopian Airlines via Addis Ababa, Kenya Airways via Nairobi.",
+          "International arrival airport: SEZ on Mahé."
+        ],
+        "important": "Compare the Frankfurt direct options first, then choose by total journey time and connection quality. Verify schedules before booking and leave a generous buffer for any onward Praslin connection."
+      }
+    },
+    {
+      "id": "flights-europe",
+      "label": "Flights from Europe",
+      "category": "flights",
+      "keywords": [
+        "flight",
+        "flights",
+        "fly",
+        "europe",
+        "paris",
+        "zurich",
+        "airline",
+        "route"
+      ],
+      "answer": "AYOR lists several practical European routes to Mahé. Frankfurt has direct services from Condor and Discover Airlines on specified seasonal schedules. Zurich has a direct Edelweiss Air service, with no flights listed between May 30 and September 6, 2026. Paris has direct Air Seychelles flights on Wednesdays, Fridays, and Sundays.\n\nFor travelers without a suitable direct service, the relevant connections are Turkish Airlines via Istanbul, Ethiopian Airlines via Addis Ababa, and Kenya Airways via Nairobi. All international flights arrive at Seychelles International Airport, SEZ, on Mahé.\n\nDecision: start with the closest direct departure airport, then compare total travel time against a one-stop itinerary from your home airport. Do not choose by airline list alone; connection duration and arrival time on Mahé affect the first day of the trip. These schedules can change, so airline verification is required before booking.",
+      "facts": [
+        "Frankfurt: Condor and Discover Airlines direct services.",
+        "Zurich: Edelweiss Air direct service; seasonal gap listed May 30–September 6, 2026.",
+        "Paris: Air Seychelles direct on Wednesday, Friday, and Sunday.",
+        "Connections: Istanbul, Addis Ababa, or Nairobi."
+      ],
+      "sourcePages": [
+        1
+      ],
+      "currentDataRecommended": true,
+      "links": [
+        {
+          "label": "Condor",
+          "url": "https://www.condor.com/"
+        },
+        {
+          "label": "Discover Airlines",
+          "url": "https://www.discover-airlines.com/"
+        },
+        {
+          "label": "Edelweiss Air",
+          "url": "https://www.flyedelweiss.com/"
+        },
+        {
+          "label": "Air Seychelles",
+          "url": "https://www.airseychelles.com/"
+        },
+        {
+          "label": "Turkish Airlines",
+          "url": "https://www.turkishairlines.com/en-int/flights/"
+        },
+        {
+          "label": "Ethiopian Airlines",
+          "url": "https://www.ethiopianairlines.com/"
+        },
+        {
+          "label": "Kenya Airways",
+          "url": "https://www.kenya-airways.com/"
+        }
+      ],
+      "format": {
+        "intro": "The useful European choices are a small set of direct routes plus three established one-stop connections.",
+        "context": "Frankfurt, Zurich, and Paris are the direct European departure points identified in AYOR. The seasonal pattern matters as much as the airline: a direct route may not operate on your dates, while a well-timed one-stop journey can produce a calmer arrival on Mahé. Start with the nearest direct airport, but compare the complete door-to-island journey before deciding. Arrival time matters when a ferry or domestic flight follows.",
+        "sections": [
+          {
+            "heading": "Direct routes",
+            "items": [
+              {
+                "text": "Frankfurt — Condor and Discover Airlines.",
+                "linkId": "condor"
+              },
+              {
+                "text": "Zurich — Edelweiss Air, subject to its seasonal schedule.",
+                "linkId": "edelweiss"
+              },
+              {
+                "text": "Paris — Air Seychelles on the days listed in AYOR.",
+                "linkId": "air-seychelles"
+              }
+            ]
+          },
+          {
+            "heading": "One-stop alternatives",
+            "items": [
+              {
+                "text": "Turkish Airlines via Istanbul.",
+                "linkId": "turkish"
+              },
+              {
+                "text": "Ethiopian Airlines via Addis Ababa.",
+                "linkId": "ethiopian"
+              },
+              {
+                "text": "Kenya Airways via Nairobi.",
+                "linkId": "kenya"
+              }
+            ]
+          }
+        ],
+        "important": "All international flights arrive at SEZ on Mahé. Compare total travel time and arrival timing carefully as well, then always verify the current live schedule directly with the airline."
+      },
+      "general_facts": [
+        "Frankfurt: Condor and Discover Airlines direct services.",
+        "Zurich: Edelweiss Air direct service; seasonal gap listed May 30–September 6, 2026.",
+        "Paris: Air Seychelles direct on Wednesday, Friday, and Sunday.",
+        "Connections: Istanbul, Addis Ababa, or Nairobi."
+      ],
+      "ayor_notes": [],
+      "designer_response": {
+        "recommendation": "I would start with the nearest practical direct departure, but choose the itinerary by total journey quality rather than by the shortest flight list.",
+        "reasoning": "Frankfurt, Zurich, and Paris are the direct European departure points identified in AYOR. The seasonal pattern matters as much as the airline: a direct route may not operate on your dates, while a well-timed one-stop journey can produce a calmer arrival on Mahé. Start with the nearest direct airport, but compare the complete door-to-island journey before deciding. Arrival time matters when a ferry or domestic flight follows.",
+        "practical_options": [
+          {
+            "heading": "Direct routes",
+            "items": [
+              {
+                "text": "Frankfurt — Condor and Discover Airlines.",
+                "linkId": "condor"
+              },
+              {
+                "text": "Zurich — Edelweiss Air, subject to its seasonal schedule.",
+                "linkId": "edelweiss"
+              },
+              {
+                "text": "Paris — Air Seychelles on the days listed in AYOR.",
+                "linkId": "air-seychelles"
+              }
+            ]
+          },
+          {
+            "heading": "One-stop alternatives",
+            "items": [
+              {
+                "text": "Turkish Airlines via Istanbul.",
+                "linkId": "turkish"
+              },
+              {
+                "text": "Ethiopian Airlines via Addis Ababa.",
+                "linkId": "ethiopian"
+              },
+              {
+                "text": "Kenya Airways via Nairobi.",
+                "linkId": "kenya"
+              }
+            ]
+          }
+        ],
+        "relevant_facts": [
+          "Frankfurt: Condor and Discover Airlines direct services.",
+          "Zurich: Edelweiss Air direct service; seasonal gap listed May 30–September 6, 2026.",
+          "Paris: Air Seychelles direct on Wednesday, Friday, and Sunday.",
+          "Connections: Istanbul, Addis Ababa, or Nairobi."
+        ],
+        "important": "All international flights arrive at SEZ on Mahé. Compare total travel time and arrival timing carefully as well, then always verify the current live schedule directly with the airline."
+      }
+    },
+    {
+      "id": "eta",
+      "label": "Seychelles ETA",
+      "category": "entry",
+      "keywords": [
+        "eta",
+        "entry",
+        "travel authorization",
+        "travel authorisation",
+        "visa",
+        "boarding",
+        "government portal"
+      ],
+      "answer": "All visitors must obtain a Seychelles Electronic Travel Authorization before departure. The application is completed online and must be approved before the airline allows boarding. The official portal listed in AYOR is seychelles.govtas.com/en.\n\nPrepare the information before starting: passport details, confirmed accommodation, and onward or return travel. Your accommodation should be registered in the official tourism database and approved for use in an ETA application; unregistered accommodation may create problems.\n\nDecision: complete the ETA after your main accommodation and flights are confirmed, but not at the last minute. Use only the official portal and keep the approval accessible on your phone during check-in and arrival. Entry rules and processing requirements can change, so verify the current instructions on the official government site shortly before travel.",
+      "facts": [
+        "ETA is required for all visitors before departure.",
+        "Approval is required before boarding.",
+        "Official portal: https://seychelles.govtas.com/en",
+        "Accommodation must be registered and suitable for the ETA application."
+      ],
+      "sourcePages": [
+        1,
+        2,
+        4
+      ],
+      "currentDataRecommended": true,
+      "links": [
+        {
+          "label": "Official Seychelles ETA",
+          "url": "https://seychelles.govtas.com/en"
+        }
+      ],
+      "format": {
+        "intro": "All visitors need an approved Seychelles Electronic Travel Authorization before boarding.",
+        "context": "The application is completed online before travel. Accommodation details matter because the property should be registered in the official tourism database and accepted for the ETA process. An unregistered stay can create avoidable approval problems even when the rest of the journey is confirmed. Complete the application in one sitting after your first stay and onward travel are fixed, and save the confirmation offline as well as in email. Check that names and passport numbers match exactly before submitting, especially when several travelers are included.",
+        "sections": [
+          {
+            "heading": "Prepare",
+            "items": [
+              "Passport details.",
+              "Confirmed accommodation registered for the ETA process.",
+              "Onward or return travel information."
+            ]
+          },
+          {
+            "heading": "Apply",
+            "items": [
+              {
+                "text": "Use the official Seychelles ETA portal.",
+                "linkId": "eta"
+              },
+              "Keep the approval accessible on your phone during check-in and arrival."
+            ]
+          }
+        ],
+        "important": "Apply after confirming flights and accommodation, but not at the last minute. Recheck all official requirements carefully shortly before your planned departure date."
+      },
+      "general_facts": [
+        "ETA is required for all visitors before departure.",
+        "Approval is required before boarding.",
+        "Official portal: https://seychelles.govtas.com/en",
+        "Accommodation must be registered and suitable for the ETA application."
+      ],
+      "ayor_notes": [],
+      "designer_response": {
+        "recommendation": "Complete the Seychelles ETA after confirming your flights and first accommodation, but do not leave it until the last minute.",
+        "reasoning": "The application is completed online before travel. Accommodation details matter because the property should be registered in the official tourism database and accepted for the ETA process. An unregistered stay can create avoidable approval problems even when the rest of the journey is confirmed. Complete the application in one sitting after your first stay and onward travel are fixed, and save the confirmation offline as well as in email. Check that names and passport numbers match exactly before submitting, especially when several travelers are included.",
+        "practical_options": [
+          {
+            "heading": "Prepare",
+            "items": [
+              "Passport details.",
+              "Confirmed accommodation registered for the ETA process.",
+              "Onward or return travel information."
+            ]
+          },
+          {
+            "heading": "Apply",
+            "items": [
+              {
+                "text": "Use the official Seychelles ETA portal.",
+                "linkId": "eta"
+              },
+              "Keep the approval accessible on your phone during check-in and arrival."
+            ]
+          }
+        ],
+        "relevant_facts": [
+          "ETA is required for all visitors before departure.",
+          "Approval is required before boarding.",
+          "Official portal: https://seychelles.govtas.com/en",
+          "Accommodation must be registered and suitable for the ETA application."
+        ],
+        "important": "Apply after confirming flights and accommodation, but not at the last minute. Recheck all official requirements carefully shortly before your planned departure date."
+      }
+    },
+    {
+      "id": "currency-payments",
+      "label": "Currency and payments",
+      "category": "money",
+      "keywords": [
+        "currency",
+        "money",
+        "cash",
+        "card",
+        "scr",
+        "rupee",
+        "atm",
+        "revolut",
+        "wise",
+        "apple pay",
+        "exchange"
+      ],
+      "answer": "The official currency is the Seychellois Rupee, SCR. AYOR recommends exchanging a small amount at the airport arrivals counters after baggage claim; a passport may be required and commission fees can apply. Visa and Mastercard are widely accepted in hotels, restaurants, supermarkets, car rentals, and tour agencies. Apple Pay or Google Pay may work in some places, but should not be your only method.\n\nCash is still useful for markets, local takeaway restaurants, small beach bars, and some taxis. Bring one or two bank cards, some EUR or USD cash, and a modest amount of SCR. ATMs exist on Mahé, Praslin, and La Digue, but fees and withdrawal limits can be high.\n\nDecision: use a multi-currency card for larger payments and carry small SCR notes for daily local purchases. If a price is displayed in EUR but charged in SCR, check your bank’s conversion fees.",
+      "facts": [
+        "Official currency: Seychellois Rupee (SCR).",
+        "Cards are common in formal businesses; cash remains useful locally.",
+        "ATMs can charge high fees and impose limits.",
+        "Recommended setup: 1–2 cards, some EUR/USD, and some SCR."
+      ],
+      "sourcePages": [
+        2,
+        3
+      ],
+      "currentDataRecommended": false,
+      "links": [],
+      "format": {
+        "intro": "The official currency is the Seychellois Rupee, SCR. AYOR recommends exchanging a small amount at the airport arrivals counters after baggage claim; a passport may be required and commission fees can apply. Visa and Mastercard are widely accepted in hotels, restaurants, supermarkets, car rentals, and tour agencies. Apple Pay or Google Pay may work in some places, but should not be your only method.",
+        "context": "Cash is still useful for markets, local takeaway restaurants, small beach bars, and some taxis. Bring one or two bank cards, some EUR or USD cash, and a modest amount of SCR. ATMs exist on Mahé, Praslin, and La Digue, but fees and withdrawal limits can be high.",
+        "sections": [
+          {
+            "heading": "Key details",
+            "items": [
+              "Official currency: Seychellois Rupee (SCR).",
+              "Cards are common in formal businesses; cash remains useful locally.",
+              "ATMs can charge high fees and impose limits.",
+              "Recommended setup: 1–2 cards, some EUR/USD, and some SCR."
+            ]
+          }
+        ],
+        "important": "Decision: use a multi-currency card for larger payments and carry small SCR notes for daily local purchases. If a price is displayed in EUR but charged in SCR, check your bank’s conversion fees."
+      },
+      "general_facts": [
+        "Official currency: Seychellois Rupee (SCR).",
+        "Cards are common in formal businesses; cash remains useful locally.",
+        "ATMs can charge high fees and impose limits.",
+        "Recommended setup: 1–2 cards, some EUR/USD, and some SCR."
+      ],
+      "ayor_notes": [
+        "Carry small SCR notes even if you mainly pay by card. Markets, takeaways, small beach bars, and some taxis are where cash becomes useful."
+      ],
+      "designer_response": {
+        "recommendation": "I would travel with two cards, some EUR or USD, and a small amount of SCR for local purchases.",
+        "reasoning": "Cash is still useful for markets, local takeaway restaurants, small beach bars, and some taxis. Bring one or two bank cards, some EUR or USD cash, and a modest amount of SCR. ATMs exist on Mahé, Praslin, and La Digue, but fees and withdrawal limits can be high.",
+        "practical_options": [
+          {
+            "heading": "Key details",
+            "items": [
+              "Official currency: Seychellois Rupee (SCR).",
+              "Cards are common in formal businesses; cash remains useful locally.",
+              "ATMs can charge high fees and impose limits.",
+              "Recommended setup: 1–2 cards, some EUR/USD, and some SCR."
+            ]
+          }
+        ],
+        "relevant_facts": [
+          "Official currency: Seychellois Rupee (SCR).",
+          "Cards are common in formal businesses; cash remains useful locally.",
+          "ATMs can charge high fees and impose limits.",
+          "Recommended setup: 1–2 cards, some EUR/USD, and some SCR."
+        ],
+        "important": "Decision: use a multi-currency card for larger payments and carry small SCR notes for daily local purchases. If a price is displayed in EUR but charged in SCR, check your bank’s conversion fees."
+      }
+    },
+    {
+      "id": "mobile-internet",
+      "label": "Mobile internet",
+      "category": "connectivity",
+      "keywords": [
+        "internet",
+        "esim",
+        "sim",
+        "airalo",
+        "mobile",
+        "data",
+        "wifi",
+        "phone"
+      ],
+      "answer": "AYOR recommends an eSIM as the simplest mobile internet setup, with Airalo listed as the preferred provider. Install it before departure so it can activate quickly on arrival. An eSIM avoids airport registration and a physical SIM swap, and is described as working across Mahé, Praslin, and La Digue.\n\nYour phone must support eSIM and be unlocked. A physical SIM remains available at airport arrivals if your device is not compatible. Internet access in Seychelles is relatively expensive, so choose a data allowance based on navigation, messaging, and essential travel use rather than constant streaming.\n\nDecision: verify eSIM compatibility before buying, install the plan while you still have reliable home Wi-Fi, and keep the QR code or activation details available offline. If your phone is locked or not compatible, use the airport physical-SIM option.",
+      "facts": [
+        "Recommended option: eSIM.",
+        "Provider listed: Airalo.",
+        "Works on Mahé, Praslin, and La Digue.",
+        "Requires an unlocked, eSIM-compatible phone."
+      ],
+      "sourcePages": [
+        3,
+        4
+      ],
+      "currentDataRecommended": true,
+      "links": [
+        {
+          "label": "Airalo Seychelles eSIM",
+          "url": "https://www.airalo.com/seychelles-esim"
+        }
+      ],
+      "format": {
+        "intro": "AYOR recommends an eSIM as the simplest mobile internet setup, with Airalo listed as the preferred provider. Install it before departure so it can activate quickly on arrival. An eSIM avoids airport registration and a physical SIM swap, and is described as working across Mahé, Praslin, and La Digue.",
+        "context": "Your phone must support eSIM and be unlocked. A physical SIM remains available at airport arrivals if your device is not compatible. Internet access in Seychelles is relatively expensive, so choose a data allowance based on navigation, messaging, and essential travel use rather than constant streaming.",
+        "sections": [
+          {
+            "heading": "Key details",
+            "items": [
+              "Recommended option: eSIM.",
+              "Provider listed: Airalo.",
+              "Works on Mahé, Praslin, and La Digue.",
+              "Requires an unlocked, eSIM-compatible phone."
+            ]
+          }
+        ],
+        "important": "Decision: verify eSIM compatibility before buying, install the plan while you still have reliable home Wi-Fi, and keep the QR code or activation details available offline. If your phone is locked or not compatible, use the airport physical-SIM option."
+      },
+      "general_facts": [
+        "Recommended option: eSIM.",
+        "Provider listed: Airalo.",
+        "Works on Mahé, Praslin, and La Digue.",
+        "Requires an unlocked, eSIM-compatible phone."
+      ],
+      "ayor_notes": [
+        "Install and test the eSIM before departure while you still have reliable Wi-Fi. Keep the activation details available offline."
+      ],
+      "designer_response": {
+        "recommendation": "I would install an eSIM before departure and use a physical airport SIM only if your phone is not compatible.",
+        "reasoning": "Your phone must support eSIM and be unlocked. A physical SIM remains available at airport arrivals if your device is not compatible. Internet access in Seychelles is relatively expensive, so choose a data allowance based on navigation, messaging, and essential travel use rather than constant streaming.",
+        "practical_options": [
+          {
+            "heading": "Key details",
+            "items": [
+              "Recommended option: eSIM.",
+              "Provider listed: Airalo.",
+              "Works on Mahé, Praslin, and La Digue.",
+              "Requires an unlocked, eSIM-compatible phone."
+            ]
+          }
+        ],
+        "relevant_facts": [
+          "Recommended option: eSIM.",
+          "Provider listed: Airalo.",
+          "Works on Mahé, Praslin, and La Digue.",
+          "Requires an unlocked, eSIM-compatible phone."
+        ],
+        "important": "Decision: verify eSIM compatibility before buying, install the plan while you still have reliable home Wi-Fi, and keep the QR code or activation details available offline. If your phone is locked or not compatible, use the airport physical-SIM option."
+      }
+    },
+    {
+      "id": "public-bus",
+      "label": "Public buses on Mahé",
+      "category": "transport",
+      "keywords": [
+        "bus",
+        "buses",
+        "sptc",
+        "public transport",
+        "transport card",
+        "bus stop",
+        "victoria routes"
+      ],
+      "answer": "Mahé’s public bus network is operated by SPTC and covers the island through routes centered on Victoria. AYOR lists operating hours of roughly 05:30–20:30, with typical frequencies of 15–30 minutes. Delays are common, signage can be minimal, and passengers should signal the driver at the stop.\n\nA rechargeable transport card is required; cash and ordinary bank cards are generally not accepted. For navigation, use the SPTC app or maps, Google Maps, or Maps.me. Add a 30–60 minute buffer and avoid peak periods around 08:00–09:00 and 16:00–18:00 when possible.\n\nDecision: buses are suitable for travelers staying in well-connected areas such as Beau Vallon and for flexible days without tight reservations. They are less suitable for remote accommodation, multiple beach stops, heavy luggage, or time-critical airport and ferry transfers.",
+      "facts": [
+        "Operator: SPTC.",
+        "Approximate schedule: 05:30–20:30.",
+        "Rechargeable transport card required.",
+        "Add 30–60 minutes for delays."
+      ],
+      "sourcePages": [
+        5
+      ],
+      "currentDataRecommended": true,
+      "links": [
+        {
+          "label": "SPTC",
+          "url": "https://sptc.sc/"
+        }
+      ],
+      "format": {
+        "intro": "Mahé’s public bus network is operated by SPTC and covers the island through routes centered on Victoria. AYOR lists operating hours of roughly 05:30–20:30, with typical frequencies of 15–30 minutes. Delays are common, signage can be minimal, and passengers should signal the driver at the stop.",
+        "context": "A rechargeable transport card is required; cash and ordinary bank cards are generally not accepted. For navigation, use the SPTC app or maps, Google Maps, or Maps.me. Add a 30–60 minute buffer and avoid peak periods around 08:00–09:00 and 16:00–18:00 when possible. Use buses when your schedule can comfortably absorb delays.",
+        "sections": [
+          {
+            "heading": "Key details",
+            "items": [
+              "Operator: SPTC.",
+              "Approximate schedule: 05:30–20:30.",
+              "Rechargeable transport card required.",
+              "Add 30–60 minutes for delays."
+            ]
+          }
+        ],
+        "important": "Decision: buses are suitable for travelers staying in well-connected areas such as Beau Vallon and for flexible days without tight reservations. They are less suitable for remote accommodation, multiple beach stops, heavy luggage, or time-critical airport and ferry transfers."
+      },
+      "general_facts": [
+        "Operator: SPTC.",
+        "Approximate schedule: 05:30–20:30.",
+        "Rechargeable transport card required.",
+        "Add 30–60 minutes for delays."
+      ],
+      "ayor_notes": [
+        "The bus works best when the day is flexible. For a timed ferry, airport journey, or several beach stops, the cheap fare may not compensate for the extra uncertainty."
+      ],
+      "designer_response": {
+        "recommendation": "Use Mahé buses for flexible, low-pressure days; choose another option for timed transfers or a route with several stops.",
+        "reasoning": "A rechargeable transport card is required; cash and ordinary bank cards are generally not accepted. For navigation, use the SPTC app or maps, Google Maps, or Maps.me. Add a 30–60 minute buffer and avoid peak periods around 08:00–09:00 and 16:00–18:00 when possible. Use buses when your schedule can comfortably absorb delays.",
+        "practical_options": [
+          {
+            "heading": "Key details",
+            "items": [
+              "Operator: SPTC.",
+              "Approximate schedule: 05:30–20:30.",
+              "Rechargeable transport card required.",
+              "Add 30–60 minutes for delays."
+            ]
+          }
+        ],
+        "relevant_facts": [
+          "Operator: SPTC.",
+          "Approximate schedule: 05:30–20:30.",
+          "Rechargeable transport card required.",
+          "Add 30–60 minutes for delays."
+        ],
+        "important": "Decision: buses are suitable for travelers staying in well-connected areas such as Beau Vallon and for flexible days without tight reservations. They are less suitable for remote accommodation, multiple beach stops, heavy luggage, or time-critical airport and ferry transfers."
+      }
+    },
+    {
+      "id": "taxis",
+      "label": "Taxis on Mahé",
+      "category": "transport",
+      "keywords": [
+        "taxi",
+        "taxis",
+        "cab",
+        "uber",
+        "bolt",
+        "taxi price",
+        "airport taxi"
+      ],
+      "answer": "Mahé does not have Uber, Bolt, or a comparable ride-hailing app. Taxis are operated by private licensed drivers and are usually arranged through a hotel, by WhatsApp, or at official taxi stands at the airport and in Victoria.\n\nAYOR lists indicative fares of 300–400 SCR from the airport to Victoria and 400–600 SCR from the airport to Beau Vallon. Short rides may be around 100–200 SCR. Taxis generally do not use meters, so agree the total price before the journey begins and confirm whether waiting time, luggage, or extra stops are included.\n\nDecision: taxis are practical for airport transfers, evenings, and occasional point-to-point trips. If you expect several full-day journeys around Mahé, compare the combined taxi cost with a small rental car or a prearranged transfer. For an early departure or remote accommodation, book the return journey in advance.",
+      "facts": [
+        "No Uber or Bolt.",
+        "Arrange through hotels, WhatsApp, airport, or Victoria taxi stands.",
+        "Airport–Victoria: 300–400 SCR.",
+        "Airport–Beau Vallon: 400–600 SCR.",
+        "No meters; agree the price first."
+      ],
+      "sourcePages": [
+        5,
+        6,
+        16
+      ],
+      "currentDataRecommended": true,
+      "links": [],
+      "format": {
+        "intro": "Mahé has licensed private taxis, but no Uber, Bolt, or comparable ride-hailing service.",
+        "context": "Taxis are most useful for airport transfers, evenings, and occasional point-to-point beach trips. They become less economical when used for several long touring days. If your accommodation is remote or your departure is early, arrange the return journey rather than relying on finding a passing taxi. Save the driver’s WhatsApp number when the first journey is reliable; this can make later pickups much simpler. Confirm the pickup time in writing.",
+        "sections": [
+          {
+            "heading": "How to arrange one",
+            "items": [
+              "Use the official airport queue.",
+              "Ask your hotel to book a driver.",
+              "Arrange directly by WhatsApp or use the Victoria taxi stands."
+            ]
+          },
+          {
+            "heading": "Indicative fares",
+            "items": [
+              "Airport to Victoria: 300–400 SCR.",
+              "Airport to Beau Vallon: 400–600 SCR.",
+              "Short rides: around 100–200 SCR."
+            ]
+          }
+        ],
+        "important": "Taxis generally have no meters. Agree the total fare first and confirm waiting time, luggage, and extra stops. For several full-day trips, compare the total with a small rental car."
+      },
+      "general_facts": [
+        "No Uber or Bolt.",
+        "Arrange through hotels, WhatsApp, airport, or Victoria taxi stands.",
+        "Airport–Victoria: 300–400 SCR.",
+        "Airport–Beau Vallon: 400–600 SCR.",
+        "No meters; agree the price first."
+      ],
+      "ayor_notes": [
+        "If the first driver is reliable, save the WhatsApp number. A known driver is especially useful for early departures and remote accommodation."
+      ],
+      "designer_response": {
+        "recommendation": "I would use taxis for airport transfers, evenings, and occasional point-to-point trips, not as the default for every touring day.",
+        "reasoning": "Taxis are most useful for airport transfers, evenings, and occasional point-to-point beach trips. They become less economical when used for several long touring days. If your accommodation is remote or your departure is early, arrange the return journey rather than relying on finding a passing taxi. Save the driver’s WhatsApp number when the first journey is reliable; this can make later pickups much simpler. Confirm the pickup time in writing.",
+        "practical_options": [
+          {
+            "heading": "How to arrange one",
+            "items": [
+              "Use the official airport queue.",
+              "Ask your hotel to book a driver.",
+              "Arrange directly by WhatsApp or use the Victoria taxi stands."
+            ]
+          },
+          {
+            "heading": "Indicative fares",
+            "items": [
+              "Airport to Victoria: 300–400 SCR.",
+              "Airport to Beau Vallon: 400–600 SCR.",
+              "Short rides: around 100–200 SCR."
+            ]
+          }
+        ],
+        "relevant_facts": [
+          "No Uber or Bolt.",
+          "Arrange through hotels, WhatsApp, airport, or Victoria taxi stands.",
+          "Airport–Victoria: 300–400 SCR.",
+          "Airport–Beau Vallon: 400–600 SCR.",
+          "No meters; agree the price first."
+        ],
+        "important": "Taxis generally have no meters. Agree the total fare first and confirm waiting time, luggage, and extra stops. For several full-day trips, compare the total with a small rental car."
+      }
+    },
+    {
+      "id": "car-rental",
+      "label": "Car rental",
+      "category": "transport",
+      "keywords": [
+        "car rental",
+        "rent a car",
+        "rental car",
+        "drive",
+        "driving",
+        "roads",
+        "parking",
+        "left side"
+      ],
+      "answer": "A rental car is most useful on Mahé when your accommodation is outside a bus-friendly area or you want to combine remote beaches and viewpoints in one day. Driving is on the left, cars are right-hand drive, and roads can be narrow, mountainous, and sharply curved.\n\nAYOR recommends small cars such as a Toyota Vitz, Passo, Aqua, Hyundai i10, or i20. Large SUVs and low sports cars are less suitable. Parking is mostly free, fuel is expensive, and stations are limited. Typical requirements include a passport, driving licence, and a minimum age around 21–23 depending on the company. A small car is listed at roughly 45–70 EUR per day.\n\nDecision: consider a partial rental for selected exploration days rather than the entire stay. Allow an easy first drive while you adjust to the road layout and left-side traffic.",
+      "facts": [
+        "Drive on the left; right-hand steering.",
+        "Roads are narrow, steep, and mountainous.",
+        "Small cars are recommended.",
+        "Indicative rental: 45–70 EUR per day."
+      ],
+      "sourcePages": [
+        6,
+        7,
+        16,
+        18
+      ],
+      "currentDataRecommended": true,
+      "links": [],
+      "format": {
+        "intro": "A rental car is most useful on Mahé when your accommodation is outside a bus-friendly area or you want to combine remote beaches and viewpoints in one day. Driving is on the left, cars are right-hand drive, and roads can be narrow, mountainous, and sharply curved.",
+        "context": "AYOR recommends small cars such as a Toyota Vitz, Passo, Aqua, Hyundai i10, or i20. Large SUVs and low sports cars are less suitable. Parking is mostly free, fuel is expensive, and stations are limited. Typical requirements include a passport, driving licence, and a minimum age around 21–23 depending on the company. A small car is listed at roughly 45–70 EUR per day.",
+        "sections": [
+          {
+            "heading": "Key details",
+            "items": [
+              "Drive on the left; right-hand steering.",
+              "Roads are narrow, steep, and mountainous.",
+              "Small cars are recommended.",
+              "Indicative rental: 45–70 EUR per day."
+            ]
+          }
+        ],
+        "important": "Decision: consider a partial rental for selected exploration days rather than the entire stay. Allow an easy first drive while you adjust to the road layout and left-side traffic."
+      },
+      "general_facts": [
+        "Drive on the left; right-hand steering.",
+        "Roads are narrow, steep, and mountainous.",
+        "Small cars are recommended.",
+        "Indicative rental: 45–70 EUR per day."
+      ],
+      "ayor_notes": [
+        "A partial rental is often the best balance. Rent for two or three exploration days instead of paying for a car that remains parked for the whole stay."
+      ],
+      "designer_response": {
+        "recommendation": "If you are staying in Beau Vallon and this is your first Seychelles trip, I would not rent a car for the entire stay.",
+        "reasoning": "Mahé is not huge, but its roads are narrow, mountainous, and slower than the map suggests. A car gives freedom for remote beaches and viewpoints, but it is unnecessary on simple beach days or when buses and taxis already fit the plan.",
+        "practical_options": [
+          {
+            "heading": "The best balance is usually",
+            "items": [
+              "Use buses or taxis for simple days.",
+              "Rent a small car for two or three exploration days.",
+              "Use those days for south Mahé, viewpoints, and remote beaches."
+            ]
+          },
+          {
+            "heading": "Choose the car carefully",
+            "items": [
+              "Choose a Toyota Vitz, Passo, Aqua, Hyundai i10, or i20.",
+              "Avoid large SUVs on narrow mountain roads."
+            ]
+          }
+        ],
+        "relevant_facts": [
+          "Driving is on the left.",
+          "Parking is mostly free.",
+          "Fuel is expensive.",
+          "A small car typically costs about 45–70 EUR per day."
+        ],
+        "important": "Allow an easy first drive while you adjust to left-side traffic and steep roads."
+      }
+    },
+    {
+      "id": "transfers",
+      "label": "Airport transfers",
+      "category": "transport",
+      "keywords": [
+        "transfer",
+        "transfers",
+        "airport transfer",
+        "shuttle",
+        "private transfer",
+        "hotel transfer"
+      ],
+      "answer": "AYOR separates transfers into four practical options: private transfer, shared shuttle, hotel transfer, and taxi on arrival. A private airport-route transfer is listed at approximately 35–60 EUR, while a shared shuttle is listed at roughly 10–15 EUR per person. Hotel transfers are described as the most convenient option, particularly when arrival is late or the accommodation is remote.\n\nDecision: use a shared shuttle when price matters and your timing is flexible. Choose a hotel or private transfer when you want a confirmed driver, have substantial luggage, or are staying outside the main transport areas. A taxi from the official airport queue works well for straightforward arrivals, but agree the total fare before leaving.\n\nTransfer prices and availability change, so confirm the current quote and whether it includes waiting time, luggage, and late-arrival fees.",
+      "facts": [
+        "Private airport transfer: approximately 35–60 EUR.",
+        "Shared shuttle: approximately 10–15 EUR per person.",
+        "Hotel transfer: most convenient.",
+        "Taxi: available on arrival."
+      ],
+      "sourcePages": [
+        7
+      ],
+      "currentDataRecommended": true,
+      "links": [],
+      "format": {
+        "intro": "AYOR separates transfers into four practical options: private transfer, shared shuttle, hotel transfer, and taxi on arrival. A private airport-route transfer is listed at approximately 35–60 EUR, while a shared shuttle is listed at roughly 10–15 EUR per person. Hotel transfers are described as the most convenient option, particularly when arrival is late or the accommodation is remote.",
+        "context": "Decision: use a shared shuttle when price matters and your timing is flexible. Choose a hotel or private transfer when you want a confirmed driver, have substantial luggage, or are staying outside the main transport areas. A taxi from the official airport queue works well for straightforward arrivals, but agree the total fare before leaving.",
+        "sections": [
+          {
+            "heading": "Key details",
+            "items": [
+              "Private airport transfer: approximately 35–60 EUR.",
+              "Shared shuttle: approximately 10–15 EUR per person.",
+              "Hotel transfer: most convenient.",
+              "Taxi: available on arrival."
+            ]
+          }
+        ],
+        "important": "Transfer prices and availability change, so confirm the current quote and whether it includes waiting time, luggage, and late-arrival fees."
+      },
+      "general_facts": [
+        "Private airport transfer: approximately 35–60 EUR.",
+        "Shared shuttle: approximately 10–15 EUR per person.",
+        "Hotel transfer: most convenient.",
+        "Taxi: available on arrival."
+      ],
+      "ayor_notes": [
+        "For a late arrival or remote stay, the calmest option is often a transfer booked through the accommodation rather than negotiating after a long flight."
+      ],
+      "designer_response": {
+        "recommendation": "For a late arrival, heavy luggage, or remote accommodation, I would prearrange a transfer rather than decide after landing.",
+        "reasoning": "Decision: use a shared shuttle when price matters and your timing is flexible. Choose a hotel or private transfer when you want a confirmed driver, have substantial luggage, or are staying outside the main transport areas. A taxi from the official airport queue works well for straightforward arrivals, but agree the total fare before leaving.",
+        "practical_options": [
+          {
+            "heading": "Key details",
+            "items": [
+              "Private airport transfer: approximately 35–60 EUR.",
+              "Shared shuttle: approximately 10–15 EUR per person.",
+              "Hotel transfer: most convenient.",
+              "Taxi: available on arrival."
+            ]
+          }
+        ],
+        "relevant_facts": [
+          "Private airport transfer: approximately 35–60 EUR.",
+          "Shared shuttle: approximately 10–15 EUR per person.",
+          "Hotel transfer: most convenient.",
+          "Taxi: available on arrival."
+        ],
+        "important": "Transfer prices and availability change, so confirm the current quote and whether it includes waiting time, luggage, and late-arrival fees."
+      }
+    },
+    {
+      "id": "ferries",
+      "label": "Inter-island ferries",
+      "category": "island-logistics",
+      "keywords": [
+        "ferry",
+        "ferries",
+        "cat cocos",
+        "cat rose",
+        "praslin",
+        "la digue",
+        "island hopping",
+        "inter-island"
+      ],
+      "answer": "The main inter-island ferry route is Cat Cocos from Mahé to Praslin, followed by Cat Rose from Praslin to La Digue. AYOR gives a Mahé–Praslin journey time of about 1 hour 15 minutes to 1 hour 45 minutes, with indicative fares of 60–100 EUR. Praslin–La Digue takes about 15–20 minutes and is listed at 15–25 EUR.\n\nCheck in around one hour before departure. Sea conditions can be rough, especially during the southeast trade-wind season from June to September. Travelers prone to seasickness should prepare accordingly and may prefer an earlier crossing.\n\nDecision: build the itinerary in a clean Mahé–Praslin–La Digue sequence where possible. Do not pair a weather-sensitive ferry with a tight international flight; keep a generous buffer or spend the final night on Mahé. Verify current schedules and fares before travel.",
+      "facts": [
+        "Cat Cocos: Mahé–Praslin.",
+        "Cat Rose: Praslin–La Digue.",
+        "Mahé–Praslin: 1h15–1h45; 60–100 EUR.",
+        "Praslin–La Digue: 15–20 min; 15–25 EUR.",
+        "Check in one hour before."
+      ],
+      "sourcePages": [
+        7,
+        8,
+        11
+      ],
+      "currentDataRecommended": true,
+      "links": [
+        {
+          "label": "Cat Cocos booking",
+          "url": "https://booking.catcocos.com/"
+        },
+        {
+          "label": "Seychelles ferry booking",
+          "url": "https://www.seychellesbookings.com/"
+        }
+      ],
+      "format": {
+        "intro": "The main inter-island ferry route is Cat Cocos from Mahé to Praslin, followed by Cat Rose from Praslin to La Digue. AYOR gives a Mahé–Praslin journey time of about 1 hour 15 minutes to 1 hour 45 minutes, with indicative fares of 60–100 EUR. Praslin–La Digue takes about 15–20 minutes and is listed at 15–25 EUR.",
+        "context": "Check in around one hour before departure. Sea conditions can be rough, especially during the southeast trade-wind season from June to September. Travelers prone to seasickness should prepare accordingly and may prefer an earlier crossing.",
+        "sections": [
+          {
+            "heading": "Key details",
+            "items": [
+              "Cat Cocos: Mahé–Praslin.",
+              "Cat Rose: Praslin–La Digue.",
+              "Mahé–Praslin: 1h15–1h45; 60–100 EUR.",
+              "Praslin–La Digue: 15–20 min; 15–25 EUR.",
+              "Check in one hour before."
+            ]
+          }
+        ],
+        "important": "Decision: build the itinerary in a clean Mahé–Praslin–La Digue sequence where possible. Do not pair a weather-sensitive ferry with a tight international flight; keep a generous buffer or spend the final night on Mahé. Verify current schedules and fares before travel."
+      },
+      "general_facts": [
+        "Cat Cocos: Mahé–Praslin.",
+        "Cat Rose: Praslin–La Digue.",
+        "Mahé–Praslin: 1h15–1h45; 60–100 EUR.",
+        "Praslin–La Digue: 15–20 min; 15–25 EUR.",
+        "Check in one hour before."
+      ],
+      "ayor_notes": [
+        "Avoid building an international departure around a fragile same-day ferry connection. A final night on Mahé can remove a lot of unnecessary risk."
+      ],
+      "designer_response": {
+        "recommendation": "Build the islands in a Mahé–Praslin–La Digue sequence and protect every important flight connection with a generous buffer.",
+        "reasoning": "Check in around one hour before departure. Sea conditions can be rough, especially during the southeast trade-wind season from June to September. Travelers prone to seasickness should prepare accordingly and may prefer an earlier crossing.",
+        "practical_options": [
+          {
+            "heading": "Key details",
+            "items": [
+              "Cat Cocos: Mahé–Praslin.",
+              "Cat Rose: Praslin–La Digue.",
+              "Mahé–Praslin: 1h15–1h45; 60–100 EUR.",
+              "Praslin–La Digue: 15–20 min; 15–25 EUR.",
+              "Check in one hour before."
+            ]
+          }
+        ],
+        "relevant_facts": [
+          "Cat Cocos: Mahé–Praslin.",
+          "Cat Rose: Praslin–La Digue.",
+          "Mahé–Praslin: 1h15–1h45; 60–100 EUR.",
+          "Praslin–La Digue: 15–20 min; 15–25 EUR.",
+          "Check in one hour before."
+        ],
+        "important": "Decision: build the itinerary in a clean Mahé–Praslin–La Digue sequence where possible. Do not pair a weather-sensitive ferry with a tight international flight; keep a generous buffer or spend the final night on Mahé. Verify current schedules and fares before travel."
+      }
+    },
+    {
+      "id": "beaches-tides",
+      "label": "Beaches and tides",
+      "category": "beaches",
+      "keywords": [
+        "beach",
+        "beaches",
+        "tide",
+        "tides",
+        "swimming",
+        "snorkeling",
+        "waves",
+        "beau vallon",
+        "anse royale",
+        "anse soleil",
+        "anse takamaka"
+      ],
+      "answer": "Mahé normally has two high and two low tides each day, with enough variation to change water depth, swimming space, and the character of shallow beaches. Check a current tide forecast for the exact day rather than relying on a general recommendation.\n\nAYOR lists Beau Vallon, Anse Royale, Anse Soleil, and Anse Takamaka among the better swimming choices. Anse Royale is known for a calm lagoon, while Anse Soleil is noted for snorkeling. Anse Intendance and Grand Anse can have stronger waves and ocean conditions. Anse Major requires hiking access.\n\nDecision: choose the beach according to season, wind direction, and the conditions you see on arrival. During June–September, south and southeast beaches can be rougher while west-coast beaches are often calmer. Never treat a visually calm beach as automatically safe; currents and sudden waves remain the main risks.",
+      "facts": [
+        "Two high and two low tides daily.",
+        "Swimming choices: Beau Vallon, Anse Royale, Anse Soleil, Anse Takamaka.",
+        "Rougher beaches can include Anse Intendance and Grand Anse.",
+        "June–September often brings rougher conditions on south and southeast coasts."
+      ],
+      "sourcePages": [
+        8,
+        10,
+        11,
+        17
+      ],
+      "currentDataRecommended": true,
+      "links": [
+        {
+          "label": "Tide-Forecast Mahé",
+          "url": "https://www.tide-forecast.com/locations/Mahe/tides/latest"
+        },
+        {
+          "label": "Tideschart Seychelles",
+          "url": "https://www.tideschart.com/Seychelles/"
+        }
+      ],
+      "format": {
+        "intro": "Mahé normally has two high and two low tides each day, with enough variation to change water depth, swimming space, and the character of shallow beaches. Check a current tide forecast for the exact day rather than relying on a general recommendation.",
+        "context": "AYOR lists Beau Vallon, Anse Royale, Anse Soleil, and Anse Takamaka among the better swimming choices. Anse Royale is known for a calm lagoon, while Anse Soleil is noted for snorkeling. Anse Intendance and Grand Anse can have stronger waves and ocean conditions. Anse Major requires hiking access.",
+        "sections": [
+          {
+            "heading": "Key details",
+            "items": [
+              "Two high and two low tides daily.",
+              "Swimming choices: Beau Vallon, Anse Royale, Anse Soleil, Anse Takamaka.",
+              "Rougher beaches can include Anse Intendance and Grand Anse.",
+              "June–September often brings rougher conditions on south and southeast coasts."
+            ]
+          }
+        ],
+        "important": "Decision: choose the beach according to season, wind direction, and the conditions you see on arrival. During June–September, south and southeast beaches can be rougher while west-coast beaches are often calmer. Never treat a visually calm beach as automatically safe; currents and sudden waves remain the main risks."
+      },
+      "general_facts": [
+        "Two high and two low tides daily.",
+        "Swimming choices: Beau Vallon, Anse Royale, Anse Soleil, Anse Takamaka.",
+        "Rougher beaches can include Anse Intendance and Grand Anse.",
+        "June–September often brings rougher conditions on south and southeast coasts."
+      ],
+      "ayor_notes": [
+        "Do not choose a beach only from photos. The same beach can feel completely different with another tide, wind direction, or season."
+      ],
+      "designer_response": {
+        "recommendation": "Choose each beach by the day’s tide, wind, and swimming conditions rather than by a fixed best-beach list.",
+        "reasoning": "AYOR lists Beau Vallon, Anse Royale, Anse Soleil, and Anse Takamaka among the better swimming choices. Anse Royale is known for a calm lagoon, while Anse Soleil is noted for snorkeling. Anse Intendance and Grand Anse can have stronger waves and ocean conditions. Anse Major requires hiking access.",
+        "practical_options": [
+          {
+            "heading": "Key details",
+            "items": [
+              "Two high and two low tides daily.",
+              "Swimming choices: Beau Vallon, Anse Royale, Anse Soleil, Anse Takamaka.",
+              "Rougher beaches can include Anse Intendance and Grand Anse.",
+              "June–September often brings rougher conditions on south and southeast coasts."
+            ]
+          }
+        ],
+        "relevant_facts": [
+          "Two high and two low tides daily.",
+          "Swimming choices: Beau Vallon, Anse Royale, Anse Soleil, Anse Takamaka.",
+          "Rougher beaches can include Anse Intendance and Grand Anse.",
+          "June–September often brings rougher conditions on south and southeast coasts."
+        ],
+        "important": "Decision: choose the beach according to season, wind direction, and the conditions you see on arrival. During June–September, south and southeast beaches can be rougher while west-coast beaches are often calmer. Never treat a visually calm beach as automatically safe; currents and sudden waves remain the main risks."
+      }
+    },
+    {
+      "id": "fruit-markets",
+      "label": "Fruit and markets",
+      "category": "food",
+      "keywords": [
+        "fruit",
+        "fruits",
+        "market",
+        "markets",
+        "victoria market",
+        "mango",
+        "papaya",
+        "banana",
+        "passion fruit"
+      ],
+      "answer": "For fruit, focus on Victoria Market and local produce rather than the wider food system. AYOR lists mango, papaya, banana, and passion fruit as common fruit options. Victoria Market is the central reference point and is best visited in the morning; the market’s strongest fresh-fish window is listed as 06:30–09:00, which is also a practical time to see produce before the day becomes busier.\n\nAvailability is seasonal, so ask vendors what is local and good that week rather than arriving with a fixed list. Carry some small SCR notes because cash is often useful at markets and smaller local sellers.\n\nDecision: visit Victoria Market early, buy what is visibly abundant and locally grown, and use roadside stands as a secondary option while travelling around Mahé. Imported produce is likely to be more expensive and less representative of the islands.",
+      "facts": [
+        "Main market reference: Victoria Market.",
+        "Fruit listed: mango, papaya, banana, passion fruit.",
+        "Morning is the practical market window.",
+        "Cash is often useful at markets."
+      ],
+      "sourcePages": [
+        8,
+        9
+      ],
+      "currentDataRecommended": false,
+      "links": [],
+      "format": {
+        "intro": "For fruit, start with Victoria Market, but do not rely only on supermarkets or the central market.",
+        "context": "Availability is seasonal, so the best purchase depends on what was grown locally that week. Imported fruit is generally less representative and may cost more. The early market hours also make it easier to combine fruit shopping with the fresh-fish section before Victoria becomes busier. Look for produce that is abundant rather than perfectly uniform, and ask the seller what is ready to eat that day versus what should ripen at your accommodation. Buy small quantities first and return if needed.",
+        "sections": [
+          {
+            "heading": "Where to go",
+            "items": [
+              "Victoria Market is the main reference point on Mahé.",
+              "Visit in the morning for the best choice and a calmer market.",
+              "Roadside stands are useful while travelling around the island."
+            ]
+          },
+          {
+            "heading": "What to look for",
+            "items": [
+              "Mango.",
+              "Papaya.",
+              "Banana.",
+              "Passion fruit."
+            ]
+          }
+        ],
+        "important": "Ask vendors what is local and good that week. Carry small SCR notes because cash is often useful at markets."
+      },
+      "general_facts": [
+        "Main market reference: Victoria Market.",
+        "Fruit listed: mango, papaya, banana, passion fruit.",
+        "Morning is the practical market window.",
+        "Cash is often useful at markets."
+      ],
+      "ayor_notes": [
+        "Supermarkets are useful for basics, but the better fruit is often with local market or roadside sellers. Choose what is seasonal and ask what was grown locally."
+      ],
+      "designer_response": {
+        "recommendation": "Start with Victoria Market, but for the best fruit I would also look for small roadside sellers.",
+        "reasoning": "Supermarkets are useful for basics, but local and seasonal fruit is often better outside large stores. Availability changes, so the best choice is what was grown locally and is ready that day. A short stop at a roadside seller is often more rewarding than a large planned supermarket shop. Ask whether the fruit is ready now or should ripen for another day at your accommodation.",
+        "practical_options": [
+          {
+            "heading": "Where to look",
+            "items": [
+              "Victoria Market — go in the morning.",
+              "Roadside fruit sellers around Mahé.",
+              "Small local stalls when travelling between beaches and villages."
+            ]
+          }
+        ],
+        "relevant_facts": [
+          "Common local fruit includes mango, papaya, banana, and passion fruit.",
+          "Cash in small SCR notes is useful at markets and roadside stands."
+        ],
+        "important": "Ask what is local, seasonal, and ready to eat now. Buy a small quantity first if you are unsure."
+      }
+    },
+    {
+      "id": "food",
+      "label": "Food and takeaway",
+      "category": "food",
+      "keywords": [
+        "food",
+        "takeaway",
+        "restaurant",
+        "supermarket",
+        "fish",
+        "meal",
+        "eat",
+        "dinner",
+        "lunch"
+      ],
+      "answer": "Local takeaway is the main budget-friendly food system in AYOR, usually offering rice, fish, and curry dishes for around 60–120 SCR per meal. Fish is described as the best-value protein. Mid-range restaurants are listed at roughly 200–500 SCR per person, while luxury dining can reach 700–2000+ SCR per person.\n\nFor groceries, STC Hypermarket is the main supermarket reference and SPAR Eden Plaza is the premium option. Food is expensive because many products are imported, and cash is often required at smaller takeaways and local businesses.\n\nDecision: use a mixed approach rather than restaurants for every meal. A practical pattern is breakfast at the accommodation, takeaway for lunch, and either a restaurant or supermarket dinner. This keeps costs controlled while still allowing selected dining experiences. Prices are indicative and should be checked locally.",
+      "facts": [
+        "Takeaway meal: approximately 60–120 SCR.",
+        "Mid-range restaurant: approximately 200–500 SCR per person.",
+        "STC Hypermarket: main supermarket.",
+        "SPAR Eden Plaza: premium supermarket.",
+        "Fish is the best-value protein."
+      ],
+      "sourcePages": [
+        8,
+        9,
+        16
+      ],
+      "currentDataRecommended": true,
+      "links": [],
+      "format": {
+        "intro": "For everyday food on Mahé, combine local takeaway, supermarkets, and seasonal produce instead of relying on restaurants for every meal.",
+        "context": "Takeaway is the most useful budget meal system, usually built around rice, fish, and curry dishes. Supermarkets are practical for breakfast supplies and basics, while Victoria Market and roadside sellers are better places to look for local fruit and fresh produce.",
+        "sections": [
+          {
+            "heading": "Takeaway",
+            "items": [
+              "Local takeaway meals are approximately 60–120 SCR.",
+              "Fish is usually the best-value protein.",
+              "Use takeaway for an easy, affordable lunch."
+            ]
+          },
+          {
+            "heading": "Supermarkets",
+            "items": [
+              "STC Hypermarket is the main practical supermarket.",
+              "SPAR Eden Plaza is the more premium option."
+            ]
+          },
+          {
+            "heading": "Fruit and local produce",
+            "items": [
+              "Visit Victoria Market in the morning.",
+              "Check roadside sellers for seasonal mango, papaya, banana, and passion fruit."
+            ]
+          }
+        ],
+        "important": "A practical rhythm is breakfast at your accommodation, takeaway for lunch, and a selected restaurant or supermarket dinner."
+      },
+      "general_facts": [
+        "Takeaway meal: approximately 60–120 SCR.",
+        "Mid-range restaurant: approximately 200–500 SCR per person.",
+        "STC Hypermarket: main supermarket.",
+        "SPAR Eden Plaza: premium supermarket.",
+        "Fish is the best-value protein."
+      ],
+      "ayor_notes": [
+        "For really good fruit, look beyond large supermarkets. Small local sellers often have better seasonal produce and can tell you what is ready to eat that day."
+      ],
+      "designer_response": {
+        "recommendation": "I would combine local takeaway, supermarket basics, and seasonal produce rather than eating in restaurants for every meal.",
+        "reasoning": "This gives you a more practical and local trip while keeping food costs under control. Takeaway works well for lunch, supermarkets cover breakfast and essentials, and local sellers are usually the better choice for fruit.",
+        "practical_options": [
+          {
+            "heading": "Takeaway",
+            "items": [
+              "Local takeaway meals are approximately 60–120 SCR.",
+              "Fish is usually the best-value protein.",
+              "Use takeaway for an easy, affordable lunch."
+            ]
+          },
+          {
+            "heading": "Supermarkets",
+            "items": [
+              "STC Hypermarket is the main practical supermarket.",
+              "SPAR Eden Plaza is the more premium option."
+            ]
+          },
+          {
+            "heading": "Fruit and local produce",
+            "items": [
+              "Visit Victoria Market in the morning.",
+              "Check roadside sellers for seasonal mango, papaya, banana, and passion fruit."
+            ]
+          }
+        ],
+        "relevant_facts": [
+          "Takeaway meals are approximately 60–120 SCR.",
+          "Mid-range restaurants are approximately 200–500 SCR per person.",
+          "Fish is usually the best-value protein."
+        ],
+        "important": "A simple rhythm is breakfast at the accommodation, takeaway for lunch, and a selected restaurant or supermarket dinner."
+      }
+    },
+    {
+      "id": "weather-seasons",
+      "label": "Weather and seasons",
+      "category": "weather",
+      "keywords": [
+        "weather",
+        "season",
+        "rain",
+        "wind",
+        "monsoon",
+        "temperature",
+        "april",
+        "may",
+        "june",
+        "july",
+        "august",
+        "september",
+        "october",
+        "november",
+        "december"
+      ],
+      "answer": "Seychelles has a tropical climate throughout the year, with typical daytime temperatures of 27–31°C, nights around 24–27°C, and ocean temperatures of 26–30°C. Rain is possible in every month and often arrives in short tropical bursts rather than ruining an entire day.\n\nDecember–March is hotter and more humid, with a higher chance of rain but calmer water on many beaches. April–May and October–November are transition periods with less wind, calmer seas, and good underwater visibility. June–September is cooler and less humid but windier, with rougher seas on exposed south and southeast coasts; it is often better for hiking.\n\nDecision: choose April–May or October–November for swimming, snorkeling, diving, and island hopping. Choose June–September for hiking and lower humidity, while planning beaches more carefully. Weather can differ significantly across Mahé on the same day.",
+      "facts": [
+        "Day: 27–31°C; night: 24–27°C; ocean: 26–30°C.",
+        "April–May and October–November: calmer transition periods.",
+        "June–September: windier, cooler, rougher on exposed coasts.",
+        "Rain can occur year-round and often changes quickly."
+      ],
+      "sourcePages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "currentDataRecommended": true,
+      "links": [],
+      "format": {
+        "intro": "Seychelles has a tropical climate throughout the year, with typical daytime temperatures of 27–31°C, nights around 24–27°C, and ocean temperatures of 26–30°C. Rain is possible in every month and often arrives in short tropical bursts rather than ruining an entire day.",
+        "context": "December–March is hotter and more humid, with a higher chance of rain but calmer water on many beaches. April–May and October–November are transition periods with less wind, calmer seas, and good underwater visibility. June–September is cooler and less humid but windier, with rougher seas on exposed south and southeast coasts; it is often better for hiking.",
+        "sections": [
+          {
+            "heading": "Key details",
+            "items": [
+              "Day: 27–31°C; night: 24–27°C; ocean: 26–30°C.",
+              "April–May and October–November: calmer transition periods.",
+              "June–September: windier, cooler, rougher on exposed coasts.",
+              "Rain can occur year-round and often changes quickly."
+            ]
+          }
+        ],
+        "important": "Decision: choose April–May or October–November for swimming, snorkeling, diving, and island hopping. Choose June–September for hiking and lower humidity, while planning beaches more carefully. Weather can differ significantly across Mahé on the same day."
+      },
+      "general_facts": [
+        "Day: 27–31°C; night: 24–27°C; ocean: 26–30°C.",
+        "April–May and October–November: calmer transition periods.",
+        "June–September: windier, cooler, rougher on exposed coasts.",
+        "Rain can occur year-round and often changes quickly."
+      ],
+      "ayor_notes": [
+        "Do not cancel a full day because one side of Mahé looks wet. Conditions often differ across the island, and tropical rain may pass quickly."
+      ],
+      "designer_response": {
+        "recommendation": "Choose the travel period by your main activity: transition months for calmer water, or June–September for hiking and lower humidity.",
+        "reasoning": "December–March is hotter and more humid, with a higher chance of rain but calmer water on many beaches. April–May and October–November are transition periods with less wind, calmer seas, and good underwater visibility. June–September is cooler and less humid but windier, with rougher seas on exposed south and southeast coasts; it is often better for hiking.",
+        "practical_options": [
+          {
+            "heading": "Key details",
+            "items": [
+              "Day: 27–31°C; night: 24–27°C; ocean: 26–30°C.",
+              "April–May and October–November: calmer transition periods.",
+              "June–September: windier, cooler, rougher on exposed coasts.",
+              "Rain can occur year-round and often changes quickly."
+            ]
+          }
+        ],
+        "relevant_facts": [
+          "Day: 27–31°C; night: 24–27°C; ocean: 26–30°C.",
+          "April–May and October–November: calmer transition periods.",
+          "June–September: windier, cooler, rougher on exposed coasts.",
+          "Rain can occur year-round and often changes quickly."
+        ],
+        "important": "Decision: choose April–May or October–November for swimming, snorkeling, diving, and island hopping. Choose June–September for hiking and lower humidity, while planning beaches more carefully. Weather can differ significantly across Mahé on the same day."
+      }
+    },
+    {
+      "id": "where-to-stay",
+      "label": "Where to stay on Mahé",
+      "category": "accommodation",
+      "keywords": [
+        "where to stay",
+        "area",
+        "accommodation",
+        "hotel",
+        "beau vallon",
+        "victoria",
+        "eden island",
+        "anse royale",
+        "south mahe",
+        "south mahé"
+      ],
+      "answer": "Beau Vallon is AYOR’s strongest all-round recommendation for first-time visitors and travelers without a car. It has the most developed infrastructure, beach access, restaurants, takeaways, and useful bus connections, though it is busier and more tourist-oriented.\n\nVictoria works best for transit stays and access to services, but not for a beach-focused holiday. Eden Island suits travelers who prefer a modern, secure marina environment with restaurants and cafés, although it feels less local. Anse Royale offers a quieter southeast-coast atmosphere, lagoon swimming, and snorkeling, but has fewer restaurants and is harder without a car. South Mahé suits privacy, nature, and villas, with a rental car strongly recommended.\n\nDecision: choose Beau Vallon for ease, Eden Island or southern villas for luxury, Anse Royale for a calmer local base, and South Mahé for nature and privacy.",
+      "facts": [
+        "Best without a car and for first visits: Beau Vallon.",
+        "Best modern luxury area: Eden Island.",
+        "Best calm local atmosphere: Anse Royale.",
+        "Best nature and privacy: South Mahé, with a car recommended."
+      ],
+      "sourcePages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "currentDataRecommended": false,
+      "links": [],
+      "format": {
+        "intro": "Beau Vallon is AYOR’s strongest all-round recommendation for first-time visitors and travelers without a car. It has the most developed infrastructure, beach access, restaurants, takeaways, and useful bus connections, though it is busier and more tourist-oriented.",
+        "context": "Victoria works best for transit stays and access to services, but not for a beach-focused holiday. Eden Island suits travelers who prefer a modern, secure marina environment with restaurants and cafés, although it feels less local. Anse Royale offers a quieter southeast-coast atmosphere, lagoon swimming, and snorkeling, but has fewer restaurants and is harder without a car. South Mahé suits privacy, nature, and villas, with a rental car strongly recommended.",
+        "sections": [
+          {
+            "heading": "Key details",
+            "items": [
+              "Best without a car and for first visits: Beau Vallon.",
+              "Best modern luxury area: Eden Island.",
+              "Best calm local atmosphere: Anse Royale.",
+              "Best nature and privacy: South Mahé, with a car recommended."
+            ]
+          }
+        ],
+        "important": "Decision: choose Beau Vallon for ease, Eden Island or southern villas for luxury, Anse Royale for a calmer local base, and South Mahé for nature and privacy."
+      },
+      "general_facts": [
+        "Best without a car and for first visits: Beau Vallon.",
+        "Best modern luxury area: Eden Island.",
+        "Best calm local atmosphere: Anse Royale.",
+        "Best nature and privacy: South Mahé, with a car recommended."
+      ],
+      "ayor_notes": [
+        "Choose the area before choosing the property. A beautiful villa in the wrong location can create more taxi or car dependence than expected."
+      ],
+      "designer_response": {
+        "recommendation": "For a first trip without a car, I would choose Beau Vallon; choose another area only when its quieter setting is worth the extra transport.",
+        "reasoning": "Victoria works best for transit stays and access to services, but not for a beach-focused holiday. Eden Island suits travelers who prefer a modern, secure marina environment with restaurants and cafés, although it feels less local. Anse Royale offers a quieter southeast-coast atmosphere, lagoon swimming, and snorkeling, but has fewer restaurants and is harder without a car. South Mahé suits privacy, nature, and villas, with a rental car strongly recommended.",
+        "practical_options": [
+          {
+            "heading": "Key details",
+            "items": [
+              "Best without a car and for first visits: Beau Vallon.",
+              "Best modern luxury area: Eden Island.",
+              "Best calm local atmosphere: Anse Royale.",
+              "Best nature and privacy: South Mahé, with a car recommended."
+            ]
+          }
+        ],
+        "relevant_facts": [
+          "Best without a car and for first visits: Beau Vallon.",
+          "Best modern luxury area: Eden Island.",
+          "Best calm local atmosphere: Anse Royale.",
+          "Best nature and privacy: South Mahé, with a car recommended."
+        ],
+        "important": "Decision: choose Beau Vallon for ease, Eden Island or southern villas for luxury, Anse Royale for a calmer local base, and South Mahé for nature and privacy."
+      }
+    },
+    {
+      "id": "budget",
+      "label": "Budget",
+      "category": "budget",
+      "keywords": [
+        "budget",
+        "cost",
+        "costs",
+        "price",
+        "prices",
+        "cheap",
+        "expensive",
+        "per day",
+        "daily budget"
+      ],
+      "answer": "Seychelles is not a low-cost destination because many products are imported and island logistics and fuel add expense. AYOR estimates budget travel at roughly 70–120 EUR per person per day, using a guesthouse or apartment, public buses, and local takeaway food. Mid-range travel is estimated at 150–300 EUR per day, with a good hotel or apartment, some taxis, and a partial car rental. Luxury travel is listed at approximately 400–1500+ EUR per day.\n\nUseful reference costs include takeaway meals at 60–120 SCR, mid-range restaurants at 200–500 SCR per person, airport–Beau Vallon taxis at 400–600 SCR, and small rental cars at 45–70 EUR per day.\n\nDecision: control the budget through accommodation type, local food, and selective transport. A self-catering stay, buses, takeaways, and a short rather than full-trip car rental create the largest savings.",
+      "facts": [
+        "Budget: 70–120 EUR per person/day.",
+        "Mid-range: 150–300 EUR/day.",
+        "Luxury: 400–1500+ EUR/day.",
+        "Small car: 45–70 EUR/day.",
+        "Takeaway: 60–120 SCR."
+      ],
+      "sourcePages": [
+        15,
+        16
+      ],
+      "currentDataRecommended": true,
+      "links": [],
+      "format": {
+        "intro": "Seychelles is expensive, but the daily cost can be controlled through accommodation, local food, and selective transport.",
+        "context": "A budget setup is approximately 70–120 EUR per person per day, while mid-range travel is approximately 150–300 EUR. The largest savings usually come from a guesthouse or apartment, buses, takeaway meals, seasonal local produce, and renting a car only for the days when it adds real value.",
+        "sections": [
+          {
+            "heading": "Useful cost references",
+            "items": [
+              "Takeaway meal: approximately 60–120 SCR.",
+              "Mid-range restaurant: approximately 200–500 SCR per person.",
+              "Small rental car: approximately 45–70 EUR per day.",
+              "Airport to Beau Vallon taxi: approximately 400–600 SCR."
+            ]
+          },
+          {
+            "heading": "Where to save",
+            "items": [
+              "Use takeaway instead of restaurants for every meal.",
+              "Buy seasonal fruit and local produce from markets or roadside sellers.",
+              "Use buses for flexible days and rent a car only for selected routes."
+            ]
+          }
+        ],
+        "important": "Budget the expensive decisions first: accommodation, inter-island travel, and private transport. Daily food choices are easier to adjust."
+      },
+      "general_facts": [
+        "Budget: 70–120 EUR per person/day.",
+        "Mid-range: 150–300 EUR/day.",
+        "Luxury: 400–1500+ EUR/day.",
+        "Small car: 45–70 EUR/day.",
+        "Takeaway: 60–120 SCR."
+      ],
+      "ayor_notes": [
+        "Takeaway and seasonal local produce reduce food costs without making the trip feel restricted. Save restaurant spending for the meals that matter most."
+      ],
+      "designer_response": {
+        "recommendation": "For a controlled Seychelles budget, focus first on accommodation, transport choices, and how often you eat in restaurants.",
+        "reasoning": "The destination is expensive, but daily costs become much more manageable with a guesthouse or apartment, local takeaway, seasonal produce, buses, and a partial rather than full-stay car rental.",
+        "practical_options": [
+          {
+            "heading": "Useful cost references",
+            "items": [
+              "Takeaway meal: approximately 60–120 SCR.",
+              "Mid-range restaurant: approximately 200–500 SCR per person.",
+              "Small rental car: approximately 45–70 EUR per day.",
+              "Airport to Beau Vallon taxi: approximately 400–600 SCR."
+            ]
+          },
+          {
+            "heading": "Where to save",
+            "items": [
+              "Use takeaway instead of restaurants for every meal.",
+              "Buy seasonal fruit and local produce from markets or roadside sellers.",
+              "Use buses for flexible days and rent a car only for selected routes."
+            ]
+          }
+        ],
+        "relevant_facts": [
+          "Budget travel is approximately 70–120 EUR per person per day.",
+          "Mid-range travel is approximately 150–300 EUR per day.",
+          "A small rental car is approximately 45–70 EUR per day."
+        ],
+        "important": "Set the budget for accommodation, inter-island travel, and private transport first. Adjust food spending around those fixed costs."
+      }
+    },
+    {
+      "id": "safety",
+      "label": "Safety",
+      "category": "safety",
+      "keywords": [
+        "safety",
+        "safe",
+        "crime",
+        "current",
+        "sun",
+        "hiking",
+        "mosquito",
+        "medical",
+        "pharmacy",
+        "tap water"
+      ],
+      "answer": "Seychelles is described in AYOR as one of the safer destinations in Africa and the Indian Ocean, with violent crime against tourists considered rare. The more important practical risks are ocean conditions, strong UV, slippery trails, narrow roads, and leaving valuables unattended.\n\nStrong currents, sudden waves, and slippery rocks require caution, especially at wilder beaches such as Anse Intendance and Grand Anse. Use SPF 50+, stay hydrated, and avoid the strongest sun between 11:00 and 15:00. Trails can become slippery after rain, so use proper shoes and carry water. Mosquitoes are more active after rain, near vegetation, and at sunset.\n\nDecision: observe local beach conditions, avoid swimming alone on wild beaches, secure valuables, and bring personal medication. Pharmacies are available on Mahé and Praslin. Tap water is generally considered safe in many areas, though many visitors prefer bottled water.",
+      "facts": [
+        "Violent crime against tourists is rare.",
+        "Main risks: ocean conditions, sun, slippery trails, and driving.",
+        "Use SPF 50+ and avoid peak sun 11:00–15:00.",
+        "Bring personal medication."
+      ],
+      "sourcePages": [
+        17,
+        18,
+        19
+      ],
+      "currentDataRecommended": false,
+      "links": [],
+      "format": {
+        "intro": "Seychelles is described in AYOR as one of the safer destinations in Africa and the Indian Ocean, with violent crime against tourists considered rare. The more important practical risks are ocean conditions, strong UV, slippery trails, narrow roads, and leaving valuables unattended.",
+        "context": "Strong currents, sudden waves, and slippery rocks require caution, especially at wilder beaches such as Anse Intendance and Grand Anse. Use SPF 50+, stay hydrated, and avoid the strongest sun between 11:00 and 15:00. Trails can become slippery after rain, so use proper shoes and carry water. Mosquitoes are more active after rain, near vegetation, and at sunset.",
+        "sections": [
+          {
+            "heading": "Key details",
+            "items": [
+              "Violent crime against tourists is rare.",
+              "Main risks: ocean conditions, sun, slippery trails, and driving.",
+              "Use SPF 50+ and avoid peak sun 11:00–15:00.",
+              "Bring personal medication."
+            ]
+          }
+        ],
+        "important": "Decision: observe local beach conditions, avoid swimming alone on wild beaches, secure valuables, and bring personal medication. Pharmacies are available on Mahé and Praslin. Tap water is generally considered safe in many areas, though many visitors prefer bottled water."
+      },
+      "general_facts": [
+        "Violent crime against tourists is rare.",
+        "Main risks: ocean conditions, sun, slippery trails, and driving.",
+        "Use SPF 50+ and avoid peak sun 11:00–15:00.",
+        "Bring personal medication."
+      ],
+      "ayor_notes": [
+        "The ocean is usually the practical risk, not crime. Watch the water before entering and treat local warnings more seriously than how calm a beach looks."
+      ],
+      "designer_response": {
+        "recommendation": "Treat ocean conditions, sun, and road awareness as the main practical safety priorities rather than worrying excessively about crime.",
+        "reasoning": "Strong currents, sudden waves, and slippery rocks require caution, especially at wilder beaches such as Anse Intendance and Grand Anse. Use SPF 50+, stay hydrated, and avoid the strongest sun between 11:00 and 15:00. Trails can become slippery after rain, so use proper shoes and carry water. Mosquitoes are more active after rain, near vegetation, and at sunset.",
+        "practical_options": [
+          {
+            "heading": "Key details",
+            "items": [
+              "Violent crime against tourists is rare.",
+              "Main risks: ocean conditions, sun, slippery trails, and driving.",
+              "Use SPF 50+ and avoid peak sun 11:00–15:00.",
+              "Bring personal medication."
+            ]
+          }
+        ],
+        "relevant_facts": [
+          "Violent crime against tourists is rare.",
+          "Main risks: ocean conditions, sun, slippery trails, and driving.",
+          "Use SPF 50+ and avoid peak sun 11:00–15:00.",
+          "Bring personal medication."
+        ],
+        "important": "Decision: observe local beach conditions, avoid swimming alone on wild beaches, secure valuables, and bring personal medication. Pharmacies are available on Mahé and Praslin. Tap water is generally considered safe in many areas, though many visitors prefer bottled water."
+      }
+    }
+  ],
+  "resources": {
+    "condor": {
+      "label": "Condor",
+      "url": "https://www.condor.com/"
+    },
+    "discover": {
+      "label": "Discover Airlines",
+      "url": "https://www.discover-airlines.com/"
+    },
+    "edelweiss": {
+      "label": "Edelweiss Air",
+      "url": "https://www.flyedelweiss.com/"
+    },
+    "air-seychelles": {
+      "label": "Air Seychelles",
+      "url": "https://www.airseychelles.com/"
+    },
+    "turkish": {
+      "label": "Turkish Airlines",
+      "url": "https://www.turkishairlines.com/en-int/flights/"
+    },
+    "ethiopian": {
+      "label": "Ethiopian Airlines",
+      "url": "https://www.ethiopianairlines.com/"
+    },
+    "kenya": {
+      "label": "Kenya Airways",
+      "url": "https://www.kenya-airways.com/"
+    },
+    "eta": {
+      "label": "Official Seychelles ETA",
+      "url": "https://seychelles.govtas.com/en"
+    },
+    "airalo": {
+      "label": "Airalo Seychelles eSIM",
+      "url": "https://www.airalo.com/seychelles-esim"
+    },
+    "sptc": {
+      "label": "SPTC",
+      "url": "https://sptc.sc/"
+    },
+    "cat-cocos": {
+      "label": "Cat Cocos booking",
+      "url": "https://booking.catcocos.com/"
+    },
+    "cat-rose": {
+      "label": "Seychelles ferry booking",
+      "url": "https://www.seychellesbookings.com/"
+    },
+    "tide-forecast": {
+      "label": "Tide-Forecast Mahé",
+      "url": "https://www.tide-forecast.com/locations/Mahe/tides/latest"
+    },
+    "tideschart": {
+      "label": "Tideschart Seychelles",
+      "url": "https://www.tideschart.com/Seychelles/"
+    }
+  }
+}
