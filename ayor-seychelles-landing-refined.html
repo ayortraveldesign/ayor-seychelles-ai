@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fbf9f4">
+  <title>AYOR Seychelles AI Assistant</title>
+  <link rel="stylesheet" href="public/vendor/leaflet/leaflet.css">
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem("ayor-theme");
+        document.documentElement.dataset.theme = savedTheme === "dark" ? "dark" : "light";
+      } catch {
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --black: #17191d;
+      --black-soft: #292a2d;
+      --gold: #caa65d;
+      --gold-dark: #a8833e;
+      --ivory: #f4f0e7;
+      --paper: #fbf9f4;
+      --muted: #746e64;
+      --line: #ddd7cb;
+      --panel: #fbf9f4;
+      --field: #f4f0e7;
+      --field-border: #cec7ba;
+      --placeholder: #8c857a;
+      --quiet: #918878;
+      --empty: #938b80;
+      --scrollbar: #c9c1b4;
+      --assistant-bg: #f4f0e7;
+      --assistant-text: #292a2d;
+      --caveat: #625d54;
+      --link: #795d27;
+      --link-decoration: rgba(121, 93, 39, .42);
+      --note-bg: #f2e8cf;
+      --note-border: #c8a75f;
+      --note-text: #332b1e;
+      --note-label: #80601f;
+      --meta: #8c8478;
+      --error: #7c3028;
+      --overlay: rgba(23, 25, 29, .16);
+      --focus-ring: rgba(202, 166, 93, .28);
+      --solid-bg: #17191d;
+      --solid-text: #f4f0e7;
+    }
+
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --black: #e8e1d4;
+      --black-soft: #d7d0c4;
+      --gold: #d2ae66;
+      --gold-dark: #c59b4d;
+      --ivory: #20252b;
+      --paper: #151a20;
+      --muted: #aaa49a;
+      --line: #343a42;
+      --panel: #151a20;
+      --field: #1d232a;
+      --field-border: #3d444d;
+      --placeholder: #868b90;
+      --quiet: #9b958b;
+      --empty: #aaa49a;
+      --scrollbar: #4b5159;
+      --assistant-bg: #20262d;
+      --assistant-text: #e8e1d4;
+      --caveat: #b7afa2;
+      --link: #d6b36c;
+      --link-decoration: rgba(214, 179, 108, .46);
+      --note-bg: #29271f;
+      --note-border: #7f693c;
+      --note-text: #e7ddca;
+      --note-label: #d2ae66;
+      --meta: #989187;
+      --error: #d99a8f;
+      --overlay: rgba(12, 20, 28, .18);
+      --focus-ring: rgba(210, 174, 102, .34);
+      --solid-bg: #242c35;
+      --solid-text: #eee7da;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+    body {
+      background: var(--panel);
+      color: var(--black);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color .25s ease, color .25s ease;
+    }
+    button, input { font: inherit; }
+
+    .app {
+      width: 100%;
+      height: 100dvh;
+      display: grid;
+      grid-template-columns: minmax(600px, 60%) minmax(0, 40%);
+    }
+
+    .planning {
+      min-width: 0;
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto auto minmax(0, 1fr) auto;
+      padding: clamp(20px, 3vw, 40px) clamp(28px, 4vw, 58px);
+      background: var(--panel);
+      overflow: hidden;
+      transition: background-color .25s ease;
+    }
+
+    .brand-bar {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .logo {
+      display: block;
+      width: 120px;
+      height: 55px;
+      object-fit: cover;
+      object-position: center;
+    }
+    .theme-switcher {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--field);
+      transition: background-color .25s ease, border-color .25s ease;
+    }
+    .theme-option {
+      min-width: 72px;
+      padding: 7px 10px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color .2s ease, color .2s ease;
+    }
+    .theme-option[aria-pressed="true"] {
+      background: var(--solid-bg);
+      color: var(--gold);
+    }
+    :root[data-theme="dark"] .theme-option[data-theme-value="light"][aria-pressed="false"] {
+      color: #f4f0e7;
+    }
+    .theme-option:focus-visible {
+      outline: 2px solid var(--focus-ring);
+      outline-offset: 2px;
+    }
+
+    .intro {
+      padding-top: clamp(8px, 1.6vh, 18px);
+      max-width: 760px;
+    }
+    .label {
+      margin: 0 0 5px;
+      color: var(--gold-dark);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+    .credibility {
+      margin: 0 0 11px;
+      color: var(--quiet);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      color: var(--black);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(40px, 4vw, 60px);
+      font-weight: 400;
+      line-height: .96;
+      letter-spacing: -.045em;
+      text-wrap: balance;
+    }
+    .description {
+      max-width: 700px;
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .ask-form {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+      margin-top: 14px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+    .ask-form input {
+      width: 100%;
+      min-width: 0;
+      height: 54px;
+      padding: 0 17px;
+      border: 1px solid var(--field-border);
+      border-radius: 0;
+      outline: none;
+      background: var(--field);
+      color: var(--black);
+      font-size: 15px;
+      transition: background-color .25s ease, border-color .18s ease, color .25s ease;
+    }
+    .ask-form input:focus { border-color: var(--gold-dark); }
+    .ask-form input::placeholder { color: var(--placeholder); }
+    .ask-form button {
+      height: 54px;
+      padding: 0 23px;
+      border: 1px solid var(--solid-bg);
+      border-radius: 0;
+      background: var(--solid-bg);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .18s ease, color .18s ease;
+    }
+    .ask-form button:hover,
+    .ask-form button:focus-visible {
+      background: var(--gold);
+      color: #17191d;
+      outline: none;
+    }
+    .ask-form button:disabled { opacity: .55; cursor: wait; }
+
+    .conversation {
+      min-height: 0;
+      padding: 22px 8px 18px 0;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--scrollbar) transparent;
+    }
+    .empty-state {
+      max-width: 520px;
+      color: var(--empty);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    .exchange {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 0 4px 30px 0;
+    }
+    .exchange + .exchange {
+      padding-top: 2px;
+    }
+    .message {
+      display: flex;
+      flex-direction: column;
+    }
+    .message.user {
+      align-items: flex-end;
+    }
+    .message.ayor {
+      align-items: flex-start;
+    }
+    .message-label {
+      margin: 0 0 8px 4px;
+      color: var(--gold-dark);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .bubble {
+      border-radius: 18px;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .user-bubble {
+      max-width: 70%;
+      padding: 13px 17px;
+      border-bottom-right-radius: 5px;
+      background: var(--solid-bg);
+      color: var(--solid-text);
+      transition: background-color .25s ease, color .25s ease;
+    }
+    .ayor-bubble {
+      width: 95%;
+      max-width: 900px;
+      padding: 24px 28px;
+      border: 1px solid var(--line);
+      border-bottom-left-radius: 5px;
+      background: var(--assistant-bg);
+      color: var(--assistant-text);
+      transition: background-color .25s ease, border-color .25s ease, color .25s ease;
+    }
+    .ayor-bubble p {
+      margin: 0;
+    }
+    .clarification-list {
+      margin: 17px 0 0;
+      padding-left: 22px;
+    }
+    .clarification-list li {
+      padding-left: 5px;
+    }
+    .clarification-list li + li {
+      margin-top: 9px;
+    }
+    .conversation-opening {
+      font-weight: 600;
+    }
+    .ayor-bubble .conversation-paragraph + .conversation-paragraph,
+    .ayor-bubble .conversation-opening + .conversation-paragraph {
+      margin-top: 14px;
+    }
+    .conversation-list {
+      margin: 16px 0 0;
+      padding-left: 22px;
+    }
+    .conversation-list li {
+      padding-left: 4px;
+    }
+    .conversation-list li + li {
+      margin-top: 7px;
+    }
+    .conversation-caveat {
+      margin-top: 16px !important;
+      color: var(--caveat);
+      font-size: .94em;
+    }
+    .location-suggestions {
+      margin-top: 16px;
+    }
+    .location-suggestions p {
+      margin-bottom: 9px;
+    }
+    .location-suggestion-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .location-suggestion {
+      padding: 8px 10px;
+      border: 1px solid var(--note-border);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--link);
+      font-size: 11px;
+      font-weight: 650;
+      cursor: pointer;
+    }
+    .location-suggestion:hover,
+    .location-suggestion:focus-visible {
+      background: var(--note-bg);
+      outline: none;
+    }
+    .response-label {
+      margin-bottom: 8px;
+      color: var(--gold-dark);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .response-block + .response-block {
+      margin-top: 19px;
+    }
+    .response-block + .response-label {
+      margin-top: 19px;
+    }
+    .response-block .response-label {
+      margin-bottom: 7px;
+    }
+    .ayor-bubble .answer-context {
+      margin-top: 13px;
+    }
+    .ayor-bubble p + .answer-section,
+    .answer-section + .answer-section {
+      margin-top: 19px;
+    }
+    .answer-section h3 {
+      margin: 0 0 8px;
+      color: var(--black);
+      font-size: 15px;
+      font-weight: 650;
+      line-height: 1.4;
+    }
+    .answer-section ul,
+    .answer-section ol {
+      margin: 0;
+      padding-left: 21px;
+    }
+    .answer-section li {
+      padding-left: 3px;
+    }
+    .answer-section li + li {
+      margin-top: 7px;
+    }
+    .ayor-bubble a {
+      color: var(--link);
+      font-weight: 600;
+      text-decoration-color: var(--link-decoration);
+      text-underline-offset: 3px;
+    }
+    .important {
+      margin-top: 19px !important;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+    .important strong {
+      color: var(--black);
+    }
+    .ayor-note {
+      margin-top: 20px;
+      padding: 18px 19px;
+      border: 1px solid var(--note-border);
+      border-radius: 12px;
+      background: var(--note-bg);
+      color: var(--note-text);
+      line-height: 1.78;
+    }
+    .ayor-note-label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--note-label);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .ayor-note p + p {
+      margin-top: 9px;
+    }
+    .answer-meta {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 10px 0 0 4px;
+      color: var(--meta);
+      font-size: 9px;
+    }
+    .answer-meta::before {
+      content: "";
+      width: 18px;
+      border-top: 1px solid var(--gold);
+    }
+    .error {
+      color: var(--error);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .visual-panel {
+      position: relative;
+      min-width: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #17202a;
+    }
+    .visual-layer {
+      position: absolute;
+      inset: 0;
+      transition: opacity .28s ease, visibility .28s ease;
+    }
+    .visual-layer.is-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .visual-switcher {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      z-index: 800;
+      display: inline-flex;
+      padding: 3px;
+      border: 1px solid rgba(244, 240, 231, .32);
+      border-radius: 999px;
+      background: rgba(21, 26, 32, .78);
+      backdrop-filter: blur(12px);
+    }
+    .visual-option {
+      min-width: 58px;
+      padding: 8px 11px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: #d9d3c7;
+      font-size: 9px;
+      font-weight: 650;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .visual-option[aria-pressed="true"] {
+      background: #f4f0e7;
+      color: #1b2026;
+    }
+    .map-panel,
+    #ayorMap {
+      width: 100%;
+      height: 100%;
+    }
+    .map-panel {
+      background: #d9d3c7;
+    }
+    .map-filter-bar {
+      position: absolute;
+      z-index: 700;
+      top: 72px;
+      left: 16px;
+      right: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      pointer-events: none;
+    }
+    .map-filter {
+      padding: 7px 9px;
+      border: 1px solid rgba(244, 240, 231, .28);
+      border-radius: 999px;
+      background: rgba(21, 26, 32, .78);
+      color: #eee7da;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .05em;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      pointer-events: auto;
+    }
+    .map-filter[aria-pressed="true"] {
+      border-color: var(--gold);
+      background: rgba(202, 166, 93, .94);
+      color: #17191d;
+    }
+    .map-status {
+      position: absolute;
+      z-index: 700;
+      left: 16px;
+      bottom: 18px;
+      max-width: calc(100% - 32px);
+      padding: 10px 12px;
+      border: 1px solid rgba(244, 240, 231, .22);
+      border-radius: 10px;
+      background: rgba(21, 26, 32, .82);
+      color: #eee7da;
+      font-size: 11px;
+      line-height: 1.45;
+      backdrop-filter: blur(12px);
+    }
+    .map-recommendations {
+      position: absolute;
+      z-index: 710;
+      right: 16px;
+      bottom: 18px;
+      width: min(290px, calc(100% - 32px));
+      max-height: 35%;
+      padding: 14px;
+      border: 1px solid rgba(244, 240, 231, .24);
+      border-radius: 12px;
+      background: rgba(21, 26, 32, .86);
+      color: #eee7da;
+      backdrop-filter: blur(14px);
+      overflow-y: auto;
+    }
+    .map-recommendations[hidden] {
+      display: none;
+    }
+    .map-recommendations-label {
+      margin: 0 0 9px;
+      color: var(--gold);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .map-recommendation {
+      width: 100%;
+      padding: 8px 0;
+      border: 0;
+      border-top: 1px solid rgba(244, 240, 231, .15);
+      background: transparent;
+      color: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+    .map-recommendation strong {
+      display: block;
+      color: #f4f0e7;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .map-recommendation span {
+      color: #aaa49a;
+      font-size: 10px;
+    }
+    .ayor-map-marker {
+      display: grid;
+      place-items: center;
+      width: 22px;
+      height: 22px;
+      border: 2px solid #f4f0e7;
+      border-radius: 50%;
+      background: #92733a;
+      box-shadow: 0 3px 12px rgba(12, 20, 28, .34);
+      color: #f4f0e7;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      transition: width .2s ease, height .2s ease, background-color .2s ease;
+    }
+    .ayor-map-marker[data-group="beaches"] { background: #527a82; }
+    .ayor-map-marker[data-group="snorkeling"] { background: #356b72; }
+    .ayor-map-marker[data-group="viewpoints"] { background: #76674e; }
+    .ayor-map-marker[data-group="hiking"] { background: #4f6a52; }
+    .ayor-map-marker[data-group="attractions"] { background: #7b5f4d; }
+    .ayor-map-marker[data-group="practical"] { background: #59616b; }
+    .ayor-map-marker[data-group="sunset"] { background: #a16c46; }
+    .ayor-map-marker.is-highlighted {
+      width: 30px;
+      height: 30px;
+      border-color: #fff8e9;
+      background: #caa65d;
+      color: #17191d;
+      box-shadow: 0 0 0 7px rgba(202, 166, 93, .22), 0 5px 18px rgba(12, 20, 28, .4);
+    }
+    .leaflet-popup-content-wrapper,
+    .leaflet-popup-tip {
+      background: #f8f4eb;
+      color: #292a2d;
+    }
+    .leaflet-popup-content {
+      width: 230px !important;
+      margin: 16px 17px;
+      font: 12px/1.55 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .leaflet-popup-content h3 {
+      margin: 0 0 5px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      font-weight: 400;
+    }
+    .leaflet-popup-content .popup-meta {
+      margin-bottom: 8px;
+      color: #80601f;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .leaflet-popup-content .popup-note {
+      margin-top: 9px;
+      padding: 9px;
+      border-left: 2px solid #caa65d;
+      background: #eee3ca;
+    }
+    .leaflet-popup-content a {
+      color: #795d27;
+      font-weight: 650;
+    }
+    .image-panel {
+      position: relative;
+      height: 100%;
+      background: #17202a;
+      overflow: hidden;
+    }
+    .image-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: var(--overlay);
+      pointer-events: none;
+    }
+    .image-panel video,
+    .image-panel .video-fallback {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      opacity: 1;
+      transition: opacity 320ms ease;
+      pointer-events: none;
+    }
+    .image-panel video {
+      z-index: 1;
+    }
+    .image-panel video.is-switching {
+      opacity: 0;
+    }
+    .image-panel .video-fallback {
+      z-index: 0;
+    }
+    .image-panel.has-video-error video {
+      opacity: 0;
+    }
+
+    @media (max-width: 900px) {
+      html, body { overflow: auto; }
+      .app {
+        min-height: 100dvh;
+        height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(620px, 66dvh) minmax(340px, 34dvh);
+      }
+      .planning {
+        height: 66dvh;
+        min-height: 620px;
+        padding: 25px;
+      }
+      .intro { padding-top: 28px; }
+      h1 { font-size: clamp(43px, 10vw, 62px); }
+      .description { margin-top: 15px; }
+      .ask-form { margin-top: 25px; }
+      .visual-panel,
+      .image-panel { height: 34dvh; min-height: 340px; }
+    }
+
+    @media (max-width: 560px) {
+      html, body { overflow: hidden; }
+      .app {
+        height: 100dvh;
+        min-height: 0;
+        grid-template-rows: 70dvh 30dvh;
+      }
+      .planning {
+        height: 70dvh;
+        min-height: 0;
+        padding: 19px;
+      }
+      .logo { width: 102px; height: 47px; }
+      .intro { padding-top: 10px; }
+      h1 { font-size: 39px; }
+      .description {
+        font-size: 11px;
+        line-height: 1.55;
+      }
+      .ask-form {
+        grid-template-columns: 1fr;
+        gap: 7px;
+        margin-top: 18px;
+        padding-bottom: 14px;
+      }
+      .ask-form input, .ask-form button { height: 45px; }
+      .conversation { padding-top: 14px; }
+      .empty-state { font-size: 15px; }
+      .bubble { font-size: 15px; line-height: 1.62; }
+      .user-bubble { max-width: 82%; }
+      .ayor-bubble { width: 94%; padding: 16px; }
+      .exchange { gap: 17px; padding-bottom: 22px; }
+      .visual-panel,
+      .image-panel { height: 30dvh; min-height: 0; }
+      .map-filter-bar { top: 60px; }
+      .map-recommendations { max-height: 48%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <section class="planning" aria-label="AYOR Seychelles AI Assistant">
+      <div class="brand-bar">
+        <img class="logo" src="assets/ayor-logo.jpg" alt="AYOR Travel Design">
+        <div class="theme-switcher" role="group" aria-label="AYOR color theme">
+          <button class="theme-option" type="button" data-theme-value="light" aria-pressed="true">AYOR Light</button>
+          <button class="theme-option" type="button" data-theme-value="dark" aria-pressed="false">AYOR Dark</button>
+        </div>
+      </div>
+
+      <div class="intro">
+        <p class="label">Seychelles AI Assistant</p>
+        <p class="credibility">Built from real Seychelles experience.</p>
+        <h1>How Seychelles actually works</h1>
+        <p class="description">Travel advice built from real island experience — not just internet information.</p>
+      </div>
+
+      <div class="conversation" id="conversation" aria-live="polite">
+        <div class="empty-state" id="emptyState">Planning Seychelles? Start with the question you would normally spend an hour Googling.</div>
+      </div>
+
+      <form class="ask-form" id="askForm">
+        <input id="questionInput" type="text" autocomplete="off" placeholder="Ask your Seychelles question..." aria-label="Ask your Seychelles question">
+        <button id="askButton" type="submit" disabled>Ask AYOR</button>
+      </form>
+    </section>
+
+    <section class="visual-panel" aria-label="Mahé map and Seychelles atmosphere">
+      <div class="visual-switcher" role="group" aria-label="Right panel view">
+        <button class="visual-option" type="button" data-visual-view="map" aria-pressed="true">Map</button>
+        <button class="visual-option" type="button" data-visual-view="video" aria-pressed="false">Film</button>
+      </div>
+
+      <div class="map-panel visual-layer" id="mapPanel">
+        <div id="ayorMap" aria-label="Interactive map of AYOR locations on Mahé"></div>
+        <div class="map-filter-bar" id="mapFilters" aria-label="Map categories"></div>
+        <div class="map-status" id="mapStatus">Loading AYOR locations...</div>
+        <div class="map-recommendations" id="mapRecommendations" hidden></div>
+      </div>
+
+      <div class="image-panel visual-layer is-hidden" id="videoPanel">
+        <video
+          id="topicVideo"
+          src="assets/seychelles-default.mp4"
+          poster="assets/seychelles-main.jpg"
+          data-source="assets/seychelles-default.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          aria-label="Seychelles travel atmosphere"
+        ></video>
+        <img class="video-fallback" src="assets/seychelles-main.jpg" alt="Granite rocks and clear turquoise water in Seychelles">
+      </div>
+    </section>
+  </main>
+
+  <script src="knowledge-base-data.js"></script>
+  <script src="assistant-config-data.js"></script>
+  <script src="knowledge-base-loader-v3.js"></script>
+  <script src="public/vendor/leaflet/leaflet.js"></script>
+  <script>
+    const form = document.getElementById("askForm");
+    const input = document.getElementById("questionInput");
+    const button = document.getElementById("askButton");
+    const conversation = document.getElementById("conversation");
+    const videoPanel = document.getElementById("videoPanel");
+    const topicVideo = document.getElementById("topicVideo");
+    const themeOptions = [...document.querySelectorAll("[data-theme-value]")];
+    const visualOptions = [...document.querySelectorAll("[data-visual-view]")];
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    const mapPanel = document.getElementById("mapPanel");
+    const mapFilters = document.getElementById("mapFilters");
+    const mapStatus = document.getElementById("mapStatus");
+    const mapRecommendations = document.getElementById("mapRecommendations");
+    let knowledgeReady = false;
+    let videoChangeToken = 0;
+    let pendingLocationQuery = "";
+    let locations = [];
+    let ayorMap = null;
+    let mapTiles = null;
+    let markerLayer = null;
+    const markersById = new Map();
+    const highlightedLocationIds = new Set();
+
+    const mapGroups = [
+      { id: "beaches", label: "Beaches" },
+      { id: "snorkeling", label: "Snorkeling" },
+      { id: "viewpoints", label: "Viewpoints" },
+      { id: "hiking", label: "Hiking" },
+      { id: "attractions", label: "Attractions" },
+      { id: "practical", label: "Practical" },
+      { id: "sunset", label: "Sunset" }
+    ];
+    const activeMapGroups = new Set(mapGroups.map(group => group.id));
+
+    function applyTheme(theme, persist = true) {
+      const nextTheme = theme === "dark" ? "dark" : "light";
+      document.documentElement.dataset.theme = nextTheme;
+      themeOptions.forEach(option => {
+        option.setAttribute("aria-pressed", String(option.dataset.themeValue === nextTheme));
+      });
+      themeColor?.setAttribute("content", nextTheme === "dark" ? "#151a20" : "#fbf9f4");
+      if (persist) {
+        try {
+          localStorage.setItem("ayor-theme", nextTheme);
+        } catch {}
+      }
+      updateMapTiles();
+    }
+
+    themeOptions.forEach(option => {
+      option.addEventListener("click", () => applyTheme(option.dataset.themeValue));
+    });
+    applyTheme(document.documentElement.dataset.theme, false);
+
+    function setVisualView(view) {
+      const nextView = view === "video" ? "video" : "map";
+      visualOptions.forEach(option => {
+        option.setAttribute("aria-pressed", String(option.dataset.visualView === nextView));
+      });
+      mapPanel.classList.toggle("is-hidden", nextView !== "map");
+      videoPanel.classList.toggle("is-hidden", nextView !== "video");
+      if (nextView === "map" && ayorMap) {
+        window.setTimeout(() => ayorMap.invalidateSize(), 40);
+      }
+    }
+
+    visualOptions.forEach(option => {
+      option.addEventListener("click", () => setVisualView(option.dataset.visualView));
+    });
+
+    function updateMapTiles() {
+      if (!ayorMap || !window.L) return;
+      if (mapTiles) ayorMap.removeLayer(mapTiles);
+      const dark = document.documentElement.dataset.theme === "dark";
+      mapTiles = dark
+        ? L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+            maxZoom: 19,
+            attribution: "&copy; OpenStreetMap contributors &copy; CARTO"
+          })
+        : L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            maxZoom: 19,
+            attribution: "&copy; OpenStreetMap contributors"
+          });
+      mapTiles.addTo(ayorMap);
+    }
+
+    function normalizeSearchText(value) {
+      return String(value || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+    }
+
+    function getLocationGroup(location) {
+      const category = normalizeSearchText(location.category);
+      const icon = normalizeSearchText(location.map_icon);
+      if (category.includes("snorkel") || icon.includes("snorkel")) return "snorkeling";
+      if (category.includes("sunset") || icon.includes("sunset")) return "sunset";
+      if (category === "beach" || icon === "beach") return "beaches";
+      if (category.includes("viewpoint") || icon.includes("viewpoint")) return "viewpoints";
+      if (category.includes("hiking") || icon.includes("hiking")) return "hiking";
+      if (/airport|ferry|transport|marina|supermarket|hospital|pharmacy|atm|market|bus/.test(`${category} ${icon}`)) {
+        return "practical";
+      }
+      return "attractions";
+    }
+
+    function markerLabel(group) {
+      return ({
+        beaches: "B",
+        snorkeling: "S",
+        viewpoints: "V",
+        hiking: "H",
+        attractions: "A",
+        practical: "P",
+        sunset: "S"
+      })[group] || "A";
+    }
+
+    function createMarkerIcon(location) {
+      const group = getLocationGroup(location);
+      const highlighted = highlightedLocationIds.has(location.id);
+      return L.divIcon({
+        className: "",
+        html: `<span class="ayor-map-marker${highlighted ? " is-highlighted" : ""}" data-group="${group}">${markerLabel(group)}</span>`,
+        iconSize: highlighted ? [30, 30] : [22, 22],
+        iconAnchor: highlighted ? [15, 15] : [11, 11],
+        popupAnchor: [0, highlighted ? -16 : -12]
+      });
+    }
+
+    function popupHtml(location) {
+      const note = location.ayor_note
+        ? `<div class="popup-note"><strong>AYOR Note</strong><br>${escapeHtml(location.ayor_note)}</div>`
+        : "";
+      const maps = location.google_maps_url
+        ? `<p><a href="${escapeHtml(location.google_maps_url)}" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></p>`
+        : "";
+      return `
+        <h3>${escapeHtml(location.name)}</h3>
+        <div class="popup-meta">${escapeHtml(location.category)} · ${escapeHtml(location.area)}</div>
+        <div>${escapeHtml(location.short_description)}</div>
+        ${note}
+        ${maps}
+      `;
+    }
+
+    function renderMapFilters() {
+      mapFilters.innerHTML = "";
+      for (const group of mapGroups) {
+        const filter = document.createElement("button");
+        filter.type = "button";
+        filter.className = "map-filter";
+        filter.textContent = group.label;
+        filter.dataset.mapGroup = group.id;
+        filter.setAttribute("aria-pressed", String(activeMapGroups.has(group.id)));
+        filter.addEventListener("click", () => {
+          activeMapGroups.has(group.id)
+            ? activeMapGroups.delete(group.id)
+            : activeMapGroups.add(group.id);
+          filter.setAttribute("aria-pressed", String(activeMapGroups.has(group.id)));
+          renderLocationMarkers();
+        });
+        mapFilters.appendChild(filter);
+      }
+    }
+
+    function syncFilterButtons() {
+      mapFilters.querySelectorAll("[data-map-group]").forEach(button => {
+        button.setAttribute("aria-pressed", String(activeMapGroups.has(button.dataset.mapGroup)));
+      });
+    }
+
+    function renderLocationMarkers() {
+      if (!ayorMap || !markerLayer) return;
+      markerLayer.clearLayers();
+      markersById.clear();
+      for (const location of locations) {
+        if (!activeMapGroups.has(getLocationGroup(location))) continue;
+        const marker = L.marker([location.lat, location.lng], {
+          icon: createMarkerIcon(location),
+          title: location.name
+        }).bindPopup(popupHtml(location));
+        marker.addTo(markerLayer);
+        markersById.set(location.id, marker);
+      }
+    }
+
+    function distanceKm(a, b) {
+      const radius = 6371;
+      const toRadians = degrees => degrees * Math.PI / 180;
+      const dLat = toRadians(b.lat - a.lat);
+      const dLng = toRadians(b.lng - a.lng);
+      const lat1 = toRadians(a.lat);
+      const lat2 = toRadians(b.lat);
+      const value = Math.sin(dLat / 2) ** 2
+        + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
+      return radius * 2 * Math.atan2(Math.sqrt(value), Math.sqrt(1 - value));
+    }
+
+    function matchLocations(query) {
+      if (!locations.length) return [];
+      const normalized = normalizeSearchText(query);
+      const stopWords = new Set(["best", "where", "what", "which", "near", "with", "from", "mahe", "seychelles", "the", "for", "and", "can"]);
+      const tokens = normalized.split(/[^a-z0-9]+/).filter(token => token.length > 2 && !stopWords.has(token));
+      const anchor = locations.find(location => {
+        const name = normalizeSearchText(location.name);
+        const area = normalizeSearchText(location.area);
+        return (name.length > 4 && normalized.includes(name)) || (area.length > 4 && normalized.includes(area));
+      });
+
+      const intentGroups = [];
+      if (/snorkel|marine life|reef/.test(normalized)) intentGroups.push("snorkeling");
+      if (/sunset|golden hour/.test(normalized)) intentGroups.push("sunset");
+      if (/beach|swim|family|calm water|hidden/.test(normalized)) intentGroups.push("beaches");
+      if (/view|panorama|lookout/.test(normalized)) intentGroups.push("viewpoints");
+      if (/hik|trail|walk/.test(normalized)) intentGroups.push("hiking");
+      if (/see|visit|attraction|waterfall|museum|garden/.test(normalized)) intentGroups.push("attractions");
+      if (/market|supermarket|hospital|pharmacy|atm|airport|ferry|bus|practical/.test(normalized)) intentGroups.push("practical");
+
+      return locations
+        .map(location => {
+          const name = normalizeSearchText(location.name);
+          const area = normalizeSearchText(location.area);
+          const category = normalizeSearchText(location.category);
+          const icon = normalizeSearchText(location.map_icon);
+          const keywords = normalizeSearchText(location.show_for_keywords);
+          const description = normalizeSearchText(location.short_description);
+          const group = getLocationGroup(location);
+          let score = intentGroups.includes(group) ? 9 : 0;
+          if (intentGroups.includes("snorkeling") && !["snorkeling", "beaches"].includes(group)) score -= 100;
+          if (intentGroups.includes("sunset") && !["sunset", "beaches", "viewpoints"].includes(group)) score -= 100;
+          if (intentGroups.includes("beaches") && !["beaches", "snorkeling", "sunset"].includes(group)) score -= 100;
+          if (intentGroups.includes("attractions") && !["attractions", "viewpoints", "practical"].includes(group)) score -= 100;
+          if (normalized.includes(name)) score += 16;
+          if (normalized.includes(area)) score += 8;
+          for (const token of tokens) {
+            if (name.includes(token)) score += 5;
+            if (area.includes(token)) score += 4;
+            if (category.includes(token) || icon.includes(token)) score += 4;
+            if (keywords.includes(token)) score += 3;
+            if (description.includes(token)) score += 1;
+          }
+          if (/hidden|quiet|secluded|wild/.test(normalized) && /hidden|quiet|secluded|wild|remote/.test(`${keywords} ${description}`)) {
+            score += 7;
+          }
+          if (/safe|swim|family|calm water/.test(normalized)) {
+            if (/calm|protected|reef|lagoon|family|swimming/.test(`${keywords} ${description}`)) score += 6;
+            if (/wild|rough|powerful|strong current|waves/.test(`${keywords} ${description}`)) score -= 8;
+          }
+          if (anchor && anchor.id !== location.id) {
+            const distance = distanceKm(anchor, location);
+            if (distance <= 8) score += Math.max(0, 5 - distance / 2);
+          }
+          return { location, score };
+        })
+        .filter(item => item.score >= 5)
+        .sort((a, b) => b.score - a.score || a.location.name.localeCompare(b.location.name))
+        .slice(0, 4)
+        .map(item => item.location);
+    }
+
+    function showMapRecommendations(recommended) {
+      mapRecommendations.innerHTML = "";
+      if (!recommended.length) {
+        mapRecommendations.hidden = true;
+        return;
+      }
+      const label = document.createElement("p");
+      label.className = "map-recommendations-label";
+      label.textContent = "AYOR places";
+      mapRecommendations.appendChild(label);
+      for (const location of recommended) {
+        const item = document.createElement("button");
+        item.type = "button";
+        item.className = "map-recommendation";
+        item.innerHTML = `<strong>${escapeHtml(location.name)}</strong><span>${escapeHtml(location.area)} · ${escapeHtml(location.category)}</span>`;
+        item.addEventListener("click", () => focusLocation(location.id));
+        mapRecommendations.appendChild(item);
+      }
+      mapRecommendations.hidden = false;
+    }
+
+    function highlightLocations(recommended) {
+      highlightedLocationIds.clear();
+      recommended.forEach(location => {
+        highlightedLocationIds.add(location.id);
+        activeMapGroups.add(getLocationGroup(location));
+      });
+      syncFilterButtons();
+      renderLocationMarkers();
+      showMapRecommendations(recommended);
+      if (!recommended.length || !ayorMap) return;
+      const bounds = L.latLngBounds(recommended.map(location => [location.lat, location.lng]));
+      ayorMap.fitBounds(bounds, { padding: [55, 55], maxZoom: 13 });
+      setVisualView("map");
+    }
+
+    function focusLocation(id) {
+      const location = locations.find(item => item.id === id);
+      if (!location || !ayorMap) return;
+      activeMapGroups.add(getLocationGroup(location));
+      syncFilterButtons();
+      renderLocationMarkers();
+      const marker = markersById.get(id);
+      ayorMap.setView([location.lat, location.lng], 14, { animate: true });
+      marker?.openPopup();
+      setVisualView("map");
+    }
+
+    async function initialiseLocations() {
+      if (!window.L) {
+        mapStatus.textContent = "Leaflet could not be loaded.";
+        return;
+      }
+      ayorMap = L.map("ayorMap", {
+        center: [-4.6796, 55.492],
+        zoom: 11,
+        zoomControl: true
+      });
+      markerLayer = L.layerGroup().addTo(ayorMap);
+      updateMapTiles();
+      renderMapFilters();
+      try {
+        const response = await fetch("public/data/locations.json", { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        locations = await response.json();
+        renderLocationMarkers();
+        mapStatus.textContent = `${locations.length} AYOR locations on Mahé`;
+        window.setTimeout(() => {
+          mapStatus.style.opacity = "0";
+          mapStatus.style.pointerEvents = "none";
+        }, 2200);
+      } catch (error) {
+        mapStatus.textContent = "Run npm run serve and open http://127.0.0.1:4173 to load locations.json.";
+      }
+    }
+
+    // Add local topic-specific MP4 paths here as they become available.
+    // Missing topics intentionally fall back to the default Seychelles video.
+    const topicVideos = {
+      default: "assets/seychelles-default.mp4",
+      flights: null,
+      eta: null,
+      car: null,
+      taxi: null,
+      ferry: null,
+      fruit: null,
+      food: null,
+      beach: null,
+      tides: null,
+      weather: null,
+      sunset: null,
+      snorkeling: null,
+      budget: null,
+      accommodation: null,
+      safety: null
+    };
+
+    const topicVideoKeys = {
+      "flights-germany": "flights",
+      "flights-europe": "flights",
+      "route-security-concern": "safety",
+      "eta": "eta",
+      "currency-payments": "budget",
+      "mobile-internet": "default",
+      "public-bus": "taxi",
+      "taxis": "taxi",
+      "car-rental": "car",
+      "transfers": "taxi",
+      "ferries": "ferry",
+      "beaches-tides": "beach",
+      "fruit-markets": "fruit",
+      "food": "food",
+      "weather-seasons": "weather",
+      "where-to-stay": "accommodation",
+      "budget": "budget",
+      "safety": "safety",
+      "clarify": "default"
+    };
+
+    function preloadTopicVideos() {
+      [...new Set(Object.values(topicVideos).filter(Boolean))].forEach(source => {
+        if (source === topicVideo.dataset.source) return;
+        const preload = document.createElement("link");
+        preload.rel = "preload";
+        preload.as = "video";
+        preload.href = source;
+        document.head.appendChild(preload);
+      });
+    }
+
+    function getVideoKey(question, result) {
+      const q = question.toLowerCase();
+      if (/\b(tide|tides|low tide|high tide|current|currents)\b/.test(q)) return "tides";
+      if (/\b(snorkel|snorkeling|snorkelling)\b/.test(q)) return "snorkeling";
+      if (/\b(sunset|golden hour)\b/.test(q)) return "sunset";
+      return topicVideoKeys[result.id] || "default";
+    }
+
+    function switchTopicVideo(question, result) {
+      const key = getVideoKey(question, result);
+      const nextSource = topicVideos[key] || topicVideos.default;
+      const currentSource = topicVideo.dataset.source;
+      if (currentSource === nextSource) return;
+
+      const token = ++videoChangeToken;
+      topicVideo.classList.add("is-switching");
+      const revealVideo = () => {
+        if (token !== videoChangeToken) return;
+        videoPanel.classList.remove("has-video-error");
+        topicVideo.classList.remove("is-switching");
+        topicVideo.play().catch(() => {});
+      };
+
+      window.setTimeout(() => {
+        if (token !== videoChangeToken) return;
+        topicVideo.pause();
+        topicVideo.src = nextSource;
+        topicVideo.dataset.source = nextSource;
+        topicVideo.load();
+        topicVideo.addEventListener("canplay", revealVideo, { once: true });
+        topicVideo.addEventListener("error", () => {
+          if (token !== videoChangeToken) return;
+          if (nextSource !== topicVideos.default) {
+            topicVideo.src = topicVideos.default;
+            topicVideo.dataset.source = topicVideos.default;
+            topicVideo.load();
+            topicVideo.play().catch(() => {});
+          } else {
+            videoPanel.classList.add("has-video-error");
+          }
+          topicVideo.classList.remove("is-switching");
+        }, { once: true });
+      }, 160);
+    }
+
+    function escapeHtml(value) {
+      return value.replace(/[&<>"']/g, character => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      })[character]);
+    }
+
+    function createText(value) {
+      return document.createTextNode(value);
+    }
+
+    function createLinkedItem(item, resources) {
+      const li = document.createElement("li");
+      if (typeof item === "string") {
+        li.appendChild(createText(item));
+        return li;
+      }
+
+      li.appendChild(createText(item.text));
+      if (item.linkId && resources[item.linkId]) {
+        li.appendChild(createText(" "));
+        const link = document.createElement("a");
+        link.href = resources[item.linkId].url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = resources[item.linkId].label;
+        li.appendChild(link);
+      }
+      return li;
+    }
+
+    function createAnswerBubble(result) {
+      const bubble = document.createElement("div");
+      bubble.className = "bubble ayor-bubble";
+
+      if (result.mode === "clarification" && result.clarification) {
+        const intro = document.createElement("p");
+        intro.textContent = result.clarification.intro;
+        bubble.appendChild(intro);
+
+        const questions = document.createElement("ul");
+        questions.className = "clarification-list";
+        for (const question of result.clarification.questions || []) {
+          const item = document.createElement("li");
+          item.textContent = question;
+          questions.appendChild(item);
+        }
+        bubble.appendChild(questions);
+        return bubble;
+      }
+
+      const response = result.designer_response;
+      const ayorNoteLabel = result.labels?.ayorNote || "AYOR Note";
+
+      function addParagraph(text, className = "conversation-paragraph") {
+        if (!text) return;
+        const paragraph = document.createElement("p");
+        paragraph.className = className;
+        paragraph.textContent = text;
+        bubble.appendChild(paragraph);
+      }
+
+      addParagraph(result.opening, "conversation-opening");
+
+      if (!response) {
+        const paragraphs = String(result.answer || "")
+          .split(/\n{2,}/)
+          .map(text => text.trim())
+          .filter(Boolean);
+        paragraphs.forEach(text => addParagraph(text));
+        return bubble;
+      }
+
+      addParagraph(response.recommendation);
+      addParagraph(response.reasoning);
+
+      const practicalItems = [];
+      for (const sectionData of response.practical_options || []) {
+        practicalItems.push(...(sectionData.items || []));
+      }
+      if (practicalItems.length) {
+        const list = document.createElement("ul");
+        list.className = "conversation-list";
+        for (const item of practicalItems) {
+          list.appendChild(createLinkedItem(item, window.AYOR_KNOWLEDGE_BASE_FALLBACK.resources || {}));
+        }
+        bubble.appendChild(list);
+      }
+
+      if (Array.isArray(result.recommendedLocations) && result.recommendedLocations.length) {
+        const suggestions = document.createElement("div");
+        suggestions.className = "location-suggestions";
+        const lead = document.createElement("p");
+        lead.textContent = result.recommendedLocations.length === 1
+          ? "I’ve highlighted the place I’d look at on the map."
+          : "I’ve highlighted a few places worth comparing on the map.";
+        suggestions.appendChild(lead);
+        const list = document.createElement("div");
+        list.className = "location-suggestion-list";
+        for (const location of result.recommendedLocations) {
+          const option = document.createElement("button");
+          option.type = "button";
+          option.className = "location-suggestion";
+          option.textContent = location.name;
+          option.addEventListener("click", () => focusLocation(location.id));
+          list.appendChild(option);
+        }
+        suggestions.appendChild(list);
+        bubble.appendChild(suggestions);
+      }
+
+      if (Array.isArray(result.ayor_notes) && result.ayor_notes.length) {
+        const note = document.createElement("aside");
+        note.className = "ayor-note";
+        const noteLabel = document.createElement("span");
+        noteLabel.className = "ayor-note-label";
+        noteLabel.textContent = ayorNoteLabel;
+        note.appendChild(noteLabel);
+        result.ayor_notes.forEach(text => {
+          const paragraph = document.createElement("p");
+          paragraph.textContent = text;
+          note.appendChild(paragraph);
+        });
+        bubble.appendChild(note);
+      }
+
+      if (response.important) {
+        addParagraph(response.important, "conversation-caveat");
+      }
+
+      return bubble;
+    }
+
+    function addExchange(question, result) {
+      document.getElementById("emptyState")?.remove();
+      const exchange = document.createElement("article");
+      exchange.className = "exchange";
+
+      const userMessage = document.createElement("div");
+      userMessage.className = "message user";
+      const userBubble = document.createElement("div");
+      userBubble.className = "bubble user-bubble";
+      userBubble.textContent = question;
+      userMessage.appendChild(userBubble);
+
+      const ayorMessage = document.createElement("div");
+      ayorMessage.className = "message ayor";
+      const label = document.createElement("p");
+      label.className = "message-label";
+      label.textContent = "AYOR";
+      ayorMessage.appendChild(label);
+      ayorMessage.appendChild(createAnswerBubble(result));
+      if (result.currentDataRecommended && result.mode !== "clarification") {
+        const meta = document.createElement("div");
+        meta.className = "answer-meta";
+        meta.textContent = "Verify current details before booking";
+        ayorMessage.appendChild(meta);
+      }
+
+      exchange.appendChild(userMessage);
+      exchange.appendChild(ayorMessage);
+      conversation.appendChild(exchange);
+      conversation.scrollTo({
+        top: Math.max(0, ayorMessage.offsetTop - conversation.offsetTop - 8),
+        behavior: "smooth"
+      });
+    }
+
+    async function initialiseKnowledge() {
+      try {
+        await window.AYORKnowledge.load();
+        knowledgeReady = true;
+        button.disabled = false;
+      } catch (error) {
+        conversation.innerHTML = '<p class="error">AYOR travel data could not be loaded. Keep knowledge-base.json, knowledge-base-data.js, and this HTML file in the same folder.</p>';
+      }
+    }
+
+    form.addEventListener("submit", async event => {
+      event.preventDefault();
+      const question = input.value.trim();
+      if (!question || !knowledgeReady) return;
+
+      button.disabled = true;
+      button.textContent = "Working";
+      const result = await window.AYORKnowledge.answer(question);
+      const locationSearchQuery = pendingLocationQuery
+        ? `${pendingLocationQuery} ${question}`
+        : question;
+      const recommendedLocations = result.mode === "clarification"
+        ? []
+        : matchLocations(locationSearchQuery);
+      pendingLocationQuery = result.mode === "clarification" ? locationSearchQuery : "";
+      result.recommendedLocations = recommendedLocations;
+      result.recommendedLocationIds = recommendedLocations.map(location => location.id);
+      switchTopicVideo(question, result);
+      addExchange(question, result);
+      highlightLocations(recommendedLocations);
+      input.value = "";
+      button.textContent = "Ask AYOR";
+      button.disabled = false;
+      input.focus();
+    });
+
+    topicVideo.muted = true;
+    topicVideo.play().catch(() => {});
+    topicVideo.addEventListener("error", () => videoPanel.classList.add("has-video-error"));
+    topicVideo.addEventListener("playing", () => videoPanel.classList.remove("has-video-error"));
+    preloadTopicVideos();
+    initialiseLocations();
+    initialiseKnowledge();
+  </script>
+</body>
+</html>
